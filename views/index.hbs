@@ -1,0 +1,38 @@
+{{>nav}}
+
+<section id="hero" class="c-hero c-hero--blog-post o-fixed-bg" role="banner">
+	<div class="c-hero__inner js-fade-hero-content">
+		<h1 class="c-hero__heading">BEMIT</h1>
+		<span class="c-hero__subheading"><span class="c-hero__tag">16 Mars 2016</span><span class="c-hero__tag">By Jonatan Ramhöj</span><span class="c-hero__tag">#CSS</span></span>
+		<a href="article" class="c-btn c-btn--secondary">Read article</a>
+	</div>
+	<a href="#posts" class="c-hero__arrow c-hero__arrow--active js-go-to-section js-fade-hero-content"><i class="lnr-chevron-down"></i></a>
+	<aside class="c-hero__overlay"></aside>
+</section>
+
+<div role="main">
+	<section id="posts" class="c-posts">
+		<div class="o-width-limiter o-width-limiter--medium">
+			<ul class="o-grid o-grid--airy">
+				{{#each articles}}
+				<li class="o-grid__col o-grid__col--2">
+					<a href="article" class="c-post">
+						<img class="c-post__image" src="/img/abstract.jpg" alt="Blogpost">
+						<div class="c-post__caption">
+							<p class="c-post__date">{{date}}</p>
+							<h2 class="c-post__heading">{{title}}</h2>
+							<p class="c-post__tag">{{tag}}</p>
+						</div>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</section>
+</div>
+
+<div class="c-pagination">
+	<a href="#" class="c-pagination__button">Load more<i class="c-pagination__icon lnr-arrow-down"></i></a>
+</div>
+
+{{>copyright}}
