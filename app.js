@@ -6,16 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('hbs');
 
-var routes = require('./routes/index');
-var article = require('./routes/article');
+var routes = require('./app/routes/index');
+var article = require('./app/routes/article');
 
 var app = express();
 
 // register hbs partials
-hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerPartials(__dirname + '/app/views/partials');
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/app/views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
