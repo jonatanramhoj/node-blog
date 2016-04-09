@@ -1,35 +1,35 @@
 // Mockup data
 var articles = {
-	featured: {
-		"date": "18 April 2016",
+	"featured": {
 		"title": "BEMIT",
+		"date": "18 April 2016",
 		"tags": "#CSS",
 		"author": "Jonatan Ramhöj"
 	},
-	list: [
+	"list": [
 		{
-			"date": "4 Mars 2016",
 			"title": "Angular 2 vs React",
+			"date": "4 Mars 2016",
 			"tags": "#JavaScript"
 		},
 		{
-			"date": "2 Mars 2016",
 			"title": "Grunt taskmanager",
+			"date": "2 Mars 2016",
 			"tags": "#JavaScript"
 		},
 		{
-			"date": "1 Mars 2016",
 			"title": "Websockets",
+			"date": "1 Mars 2016",
 			"tags": "#HTML"
 		},
 		{
-			"date": "28 February 2016",
 			"title": "Google maps customization",
+			"date": "28 February 2016",
 			"tags": "#JavaScript"
 		},
 		{
-			"date": "24 February 2016",
 			"title": "A very long blog post about something really interesting",
+			"date": "24 February 2016",
 			"tags": "#HTML5 #JavaScript #CSS #POSTCSS #GRUNT"
 		}
 	]
