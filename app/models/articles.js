@@ -4,28 +4,33 @@ var articles = {
 		"title": "BEMIT",
 		"date": "18 April 2016",
 		"tags": "#CSS",
-		"author": "Jonatan Ramhöj"
+		"author": "Jonatan Ramhöj",
+		"image": "../img/css.jpg"
 	},
-	"list": [
+	"all": [
 		{
 			"title": "Angular 2 vs React",
 			"date": "4 Mars 2016",
-			"tags": "#JavaScript"
+			"tags": "#JavaScript",
+			"image": "/img/abstract.jpg"
 		},
 		{
 			"title": "Grunt taskmanager",
 			"date": "2 Mars 2016",
-			"tags": "#JavaScript"
+			"tags": "#JavaScript",
+			"image": "/img/abstract.jpg"
 		},
 		{
 			"title": "Websockets",
 			"date": "1 Mars 2016",
-			"tags": "#HTML"
+			"tags": "#HTML",
+			"image": "/img/abstract.jpg"
 		},
 		{
 			"title": "Google maps customization",
 			"date": "28 February 2016",
-			"tags": "#JavaScript"
+			"tags": "#JavaScript",
+			"image": "/img/abstract.jpg"
 		},
 		{
 			"title": "A very long blog post about something really interesting",

@@ -51,14 +51,6 @@ strong {
 	height: 100vh;
 }
 
-.c-hero--blog-start {
-	background: #222 url('../img/hero.jpg');
-}
-
-.c-hero--blog-post {
-	background: #222 url('../img/css.jpg');
-}
-
 .c-hero:after {
 	position: absolute;
 	top: 0;
@@ -381,11 +373,13 @@ strong {
 	font-family: 'Monaco', 'Serif';
 	font-size: 16px;
 	border-radius: 3px;
+	word-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 @media (max-width: 600px) {
 	.c-code {
-		font-size: 14px;
+		font-size: 13px;
 	}
 }
 

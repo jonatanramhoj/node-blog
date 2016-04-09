@@ -1,6 +1,6 @@
 {{>nav}}
 
-<section id="hero" class="c-hero c-hero--blog-post o-fixed-bg" role="banner">
+<section id="hero" class="c-hero o-fixed-bg" role="banner" style="background-image:url({{articles.featured.image}})">
 	<div class="c-hero__inner js-fade-hero-content">
 		<h1 class="c-hero__heading">{{articles.featured.title}}</h1>
 		<span class="c-hero__subheading">
@@ -18,10 +18,10 @@
 	<section id="posts" class="c-posts">
 		<div class="o-width-limiter o-width-limiter--medium">
 			<ul class="o-grid o-grid--airy">
-				{{#each articles.list}}
+				{{#each articles.all}}
 				<li class="o-grid__col o-grid__col--2">
 					<a href="article" class="c-post">
-						<img class="c-post__image" src="/img/abstract.jpg" alt="Blogpost">
+						{{#if image}}<img class="c-post__image" src="{{image}}" alt="Blogpost">{{/if}}
 						<div class="c-post__caption">
 							<p class="c-post__date">{{date}}</p>
 							<h2 class="c-post__heading">{{title}}</h2>

@@ -17,6 +17,7 @@ exports.listAll = function (req, res) {
 *
 */
 exports.showSingle = function (req, res) {
+	// Add data to handlebars template
 	res.render('article', {
 		article: article
 	});
