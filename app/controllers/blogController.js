@@ -8,7 +8,8 @@ var article = require('../models/article');
 exports.listAll = function (req, res) {
 	// Add data to handlebars template
 	res.render('index', {
-		articles: articles
+		articles: articles,
+		title: 'Articles - jonatanramhoj.co' 
 	});
 };
 
@@ -19,6 +20,7 @@ exports.listAll = function (req, res) {
 exports.showSingle = function (req, res) {
 	// Add data to handlebars template
 	res.render('article', {
-		article: article
+		article: article,
+		title: 'Article - jonatanramhoj.co'
 	});
 };
