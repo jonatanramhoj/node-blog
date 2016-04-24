@@ -5,9 +5,9 @@ var Schema  = mongoose.Schema;
 // Database schema for model
 var articleSchema = new Schema({
 	title: String,
-	heading: String,
 	body: String,
-	tags: String
+	tags: String,
+	date: {type: Date, default: Date.now}
 });
 
 // Create the article model

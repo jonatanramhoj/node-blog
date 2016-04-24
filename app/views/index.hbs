@@ -2,7 +2,7 @@
 
 <section id="hero" class="c-hero o-fixed-bg" role="banner" style="background-image:url({{articles.featured.image}})">
 	<div class="c-hero__inner js-fade-hero-content">
-		<h1 class="c-hero__heading">{{articles.featured.title}}</h1>
+		<h1 class="c-hero__heading">{{title}}</h1>
 		<span class="c-hero__subheading">
 			<span class="c-hero__tag">{{articles.featured.date}}</span>
 			<span class="c-hero__tag">By {{articles.featured.author}}</span>
@@ -18,12 +18,12 @@
 	<section id="posts" class="c-posts">
 		<div class="o-width-limiter o-width-limiter--medium">
 			<ul class="o-grid o-grid--airy">
-				{{#each articles.all}}
+				{{#each articles}}
 				<li class="o-grid__col o-grid__col--2">
 					<a href="article" class="c-post">
-						{{#if image}}<img class="c-post__image" src="{{image}}" alt="Blogpost">{{/if}}
+						<img class="c-post__image" src="../img/abstract.jpg" alt="Blogpost">
 						<div class="c-post__caption">
-							<p class="c-post__date">{{date}}</p>
+							<p class="c-post__date">{{formatDate date 'DD MMMM YYYY'}}</p>
 							<h2 class="c-post__heading">{{title}}</h2>
 							<p class="c-post__tag">{{tags}}</p>
 						</div>

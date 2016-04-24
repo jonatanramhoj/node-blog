@@ -14,8 +14,14 @@ router.get('/', function(req, res, next) {
 router.post('/new', function (req, res) {
 	var data = req.body;
 	var newArticle = new article(data);
-	newArticle.save();
-	console.log('data', data);
+
+	newArticle.save(function (err, data) {
+		if (err) {
+			console.log('err:', err);
+		} else {
+			console.log('saved:', data);
+		}
+	});
 	res.sendStatus(200);
 });
 

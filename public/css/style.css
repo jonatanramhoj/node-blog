@@ -593,13 +593,13 @@ strong {
 	#BUTTON || http://codepen.io/terkel/pen/dvejH
 ----------------------------------------------------------*/
 .c-btn {
-	color: #222;
+	color: #444;
 	display: inline-block;
 	text-align: center;
 	font-size: 14px;
 	line-height: 1;
 	vertical-align: middle;
-	border: 1px solid #222;
+	border: 1px solid #444;
 	border-radius: 3px;
 	padding: 20px 25px;
 	text-decoration: none;
@@ -609,7 +609,7 @@ strong {
 }
 
 .c-btn:hover {
-	background: #222;
+	background: #444;
 	color: #fff;
 }
 
@@ -793,4 +793,34 @@ strong {
 	display: inline;
 	margin-top: 0;
 	margin-right: 10px;
+}
+
+/*----------------------------------------------------------
+	#Forms
+----------------------------------------------------------*/
+.c-form {
+	max-width: 500px;
+	margin: 100px auto;
+}
+
+.c-form__item {
+	margin-bottom: 25px;
+}
+
+.c-form__input {
+	width: 100%;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0;
+	font-size: 18px;
+	outline: none;
+}
+
+.c-form__input--textarea {
+	/*border-top: 1px solid #ccc;*/
+	/*margin-top: 20px;*/
+}
+
+.c-form__submit {
+	margin-top: 20px;
 }

@@ -7,6 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('hbs');
 var mongoose = require('mongoose');
+var moment = require('moment');
+
+// Connect to DB
 mongoose.connect('mongodb://localhost/blogDB');
 
 // Include routes
@@ -16,8 +19,14 @@ var article = require('./app/routes/article');
 // Setup express instance
 var app = express();
 
-// register hbs partials
+// Register hbs partials
 hbs.registerPartials(__dirname + '/app/views/partials');
+
+// Register hbs helpers
+hbs.registerHelper('formatDate', function(date, format) {
+	var date = moment(date).format(format);
+	return date;
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, '/app/views'));

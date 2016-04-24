@@ -1,15 +1,20 @@
 {{>nav}}
 
 <div role="main">
-	<h1>New Article</h1>
-	<form action="/article/new" method="post">
-		<input type="text" name="title" placeholder="Title">
-		<input type="text" name="heading" placeholder="Heading">
-		<textarea name="body" rows="8" cols="40"></textarea>
-		<input type="text" name="tags" placeholder="Tags">
-		<button type="submit" name="button">Save article</button>
-	</form>
-
+	<div class="o-width-limiter o-width-limiter--medium">
+		<form class="c-form" action="/article/new" method="post">
+			<fieldset class="c-form__item">
+				<input class="c-form__input" type="text" name="title" placeholder="Title">
+			</fieldset>
+			<fieldset class="c-form__item">
+				<textarea class="c-form__input c-form__input--textarea" name="body" rows="8" cols="40" placeholder="Write something"></textarea>
+			</fieldset>
+			<fieldset class="c-form__item">
+				<input class="c-form__input" type="text" name="tags" placeholder="Tags. For example: #CSS #jQuery #UX">
+			</fieldset>
+			<button class="c-btn c-form__submit" type="submit" name="button">Save article</button>
+		</form>
+	</div>
 </div>
 
 
