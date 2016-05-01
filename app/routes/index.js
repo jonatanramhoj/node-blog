@@ -5,13 +5,10 @@ var mongoose = require('mongoose');
 var article = mongoose.model('article');
 
 router.get('/', function(req, res, next) {
-	var latest = article.find().limit(1).sort({datefield: -1}).exec(function(err, post) {
-		return post;
-	});
 
 	/* List all articles and latest */
-	article.find(function (err, articles) {
-		article.find().limit(1).sort({datefield: -1}).exec(function(err, latest) {
+	article.find().sort({date: -1}).exec(function (err, articles) {
+		article.find().limit(1).sort({date: -1}).exec(function(err, latest) {
 			if (err) {
 				return res.render('500');
 			} else {

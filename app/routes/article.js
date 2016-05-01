@@ -5,15 +5,6 @@ var mongoose = require('mongoose');
 var articleModel = require('../models/article');
 var article = mongoose.model('article');
 
-/* Show single article. */
-router.get('/:id', function(req, res, next) {
-	var id = req.params.id;
-
-	article.findById(id, function (err, single) {
-		res.render('article', single);
-	});
-});
-
 /* Create new article */
 router.post('/new', function (req, res) {
 	var data = req.body;
@@ -33,7 +24,18 @@ router.post('/new', function (req, res) {
 
 /* Show new article page */
 router.get('/new', function (req, res) {
-	res.render('new', {});
+	res.render('new', {
+		title: 'New article - jonatanramhoj.co'
+	});
+});
+
+/* Show single article. */
+router.get('/:id', function(req, res, next) {
+	var id = req.params.id;
+
+	article.findById(id, function (err, single) {
+		res.render('article', single);
+	});
 });
 
 module.exports = router;
