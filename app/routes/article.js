@@ -5,9 +5,13 @@ var mongoose = require('mongoose');
 var articleModel = require('../models/article');
 var article = mongoose.model('article');
 
-/* GET single article. */
-router.get('/', function(req, res, next) {
-	blogController.showSingle(req, res);
+/* Show single article. */
+router.get('/:id', function(req, res, next) {
+	var id = req.params.id;
+
+	article.findById(id, function (err, single) {
+		res.render('article', single);
+	});
 });
 
 /* Create new article */
@@ -20,12 +24,14 @@ router.post('/new', function (req, res) {
 			console.log('err:', err);
 		} else {
 			console.log('saved:', data);
+			// TODO prompt user to confirm article before redirect to start
+			res.redirect('/');
 		}
 	});
-	res.sendStatus(200);
+	// res.sendStatus(200);
 });
 
-/* Get new article */
+/* Show new article page */
 router.get('/new', function (req, res) {
 	res.render('new', {});
 });

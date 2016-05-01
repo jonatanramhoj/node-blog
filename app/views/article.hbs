@@ -2,11 +2,11 @@
 
 <section id="hero" class="c-hero c-hero--blog-post o-fixed-bg" role="banner" style="background-image:url({{article.intro.image}})">
 	<div class="c-hero__inner js-fade-hero-content">
-		<h1 class="c-hero__heading">{{article.intro.title}}</h1>
+		<h1 class="c-hero__heading">{{title}}</h1>
 		<span class="c-hero__subheading">
-			<span class="c-hero__tag">{{article.intro.date}}</span>
-			<span class="c-hero__tag">By {{article.intro.author}}</span>
-			<span class="c-hero__tag">{{article.intro.tags}}</span>
+			<span class="c-hero__tag">{{formatDate date 'DD MMMM YYYY'}}</span>
+			<span class="c-hero__tag">By {{author}}</span>
+			<span class="c-hero__tag">{{tags}}</span>
 		</span>
 		<a href="/" class="c-btn c-btn--secondary">More articles</a>
 	</div>
@@ -18,15 +18,9 @@
 	<section id="article" class="c-section">
 		<div class="o-width-limiter o-width-limiter--x-small">
 			<article class="c-article">
-				<h2 class="c-article__heading">{{article.heading}}</h2>
-				{{#each article.body}}
-				<p>{{paragraph}}</p>
-				{{#if code}}
-<pre class="c-code">
-{{code}}
-</pre>
-				{{/if}}
-				{{/each}}
+				{{body}}
+<!-- <pre class="c-code">
+</pre> -->
 			</article>
 		</div>
 	</section>
