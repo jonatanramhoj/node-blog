@@ -5,7 +5,7 @@ body {
 
 body {
 	background: #fff;
-	color: #222;
+	color: #444;
 	font: normal 400 16px/1.4 'Montserrat', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -317,86 +317,6 @@ strong {
 .c-textfield .c-btn {
 	margin: 50px auto 0;
 }
-
-/*----------------------------------------------------------
-	#ARTICLE
-----------------------------------------------------------*/
-.c-article {
-	margin-bottom: 40px;
-	font-family: 'Neuton', 'Serif';
-	font-size: 22px;
-	line-height: 1.5;
-}
-
-@media (max-width: 600px) {
-	.c-article {
-		font-size: 18px;
-	}
-}
-
-.c-article__heading {
-	font-family: 'Montserrat', 'Sans-serif';
-	font-size: 40px;
-	font-weight: bold;
-	text-align: center;
-	color: #444;
-}
-
-@media (max-width: 600px) {
-	.c-article__heading {
-		font-size: 28px;
-	}
-}
-
-.c-article__link,
-.c-article__link:visited {
-	color: inherit;
-	padding-bottom: 2px;
-	border-bottom: 1px solid #222;
-}
-
-.c-preamble {
-	font-size: 24px;
-	font-weight: bold;
-	color: #666;
-}
-
-.c-article p {
-	margin-top: 30px;
-}
-
-.c-code {
-	display: block;
-	background: #F4F5F7;
-	padding: 20px;
-	margin-top: 40px;
-	font-family: 'Monaco', 'Serif';
-	font-size: 16px;
-	border-radius: 3px;
-	word-wrap: break-word;
-	white-space: pre-wrap;
-}
-
-@media (max-width: 600px) {
-	.c-code {
-		font-size: 13px;
-	}
-}
-
-.c-code + p {
-	margin-top: 40px;
-}
-
-.c-quote {
-	text-align: center;
-	font-style: italic;
-	font-weight: 700;
-	font-size: 32px;
-	line-height: 1.3;
-	color: #666;
-	margin-bottom: 60px;
-}
-
 
 /*----------------------------------------------------------
 	#GRID
@@ -823,4 +743,167 @@ strong {
 
 .c-form__submit {
 	margin-top: 20px;
+}
+
+/*----------------------------------------------------------
+	#ARTICLE
+----------------------------------------------------------*/
+.c-article {
+	margin-bottom: 40px;
+	font-family: 'Neuton', 'Serif';
+	font-size: 22px;
+	line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+	.c-article {
+		font-size: 18px;
+	}
+}
+
+.c-article__heading {
+	font-family: 'Montserrat', 'Sans-serif';
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	color: #444;
+}
+
+@media (max-width: 600px) {
+	.c-article__heading {
+		font-size: 28px;
+	}
+}
+
+.c-article__link,
+.c-article__link:visited {
+	color: inherit;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #222;
+}
+
+.c-preamble {
+	font-size: 24px;
+	font-weight: bold;
+	color: #666;
+}
+
+.c-article p {
+	margin-top: 30px;
+}
+
+.c-code {
+	display: block;
+	background: #F4F5F7;
+	padding: 20px;
+	margin-top: 40px;
+	font-family: 'Monaco', 'Serif';
+	font-size: 16px;
+	border-radius: 3px;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+	.c-code {
+		font-size: 13px;
+	}
+}
+
+.c-code + p {
+	margin-top: 40px;
+}
+
+.c-quote {
+	text-align: center;
+	font-style: italic;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 1.3;
+	color: #666;
+	margin-bottom: 60px;
+}
+
+
+/*----------------------------------------------------------
+	#S-TEXT
+----------------------------------------------------------*/
+.s-text h2 {
+	font-family: 'Montserrat', 'Sans-serif';
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+}
+
+@media (max-width: 600px) {
+	.s-text h2 {
+		font-size: 32px;
+	}
+}
+
+.s-text h3 {
+	font-family: 'Montserrat', 'Sans-serif';
+	font-size: 32px;
+	font-weight: bold;
+}
+
+@media (max-width: 600px) {
+	.s-text h3 {
+		font-size: 24px;
+	}
+}
+
+.s-text p {
+	font-family: 'Neuton', 'Serif';
+	font-size: 22px;
+	line-height: 1.5;
+	margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+	.s-text p {
+		font-size: 18px;
+	}
+}
+
+.s-text ol,
+.s-text ul {
+	padding-left: 40px;
+}
+
+.s-text ol {
+	list-style-type: decimal;
+}
+
+.s-text li {
+	margin-bottom: 10px;
+}
+
+.s-text ul li {
+	position: relative;
+}
+
+.s-text ul li:before {
+	position: absolute;
+	left: -30px;
+	top: 50%;
+	transform: translateY(-50%);
+	content: '';
+	width: 7px;
+	height: 7px;
+	display: inline-block;
+	border-radius: 50%;
+	background: #444;
+}
+
+.s-text pre {
+	display: block;
+	background: #F4F5F7;
+	padding: 20px;
+	margin-top: 40px;
+	font-family: 'Monaco', 'Serif';
+	font-size: 16px;
+	border-radius: 3px;
+	word-wrap: break-word;
+	white-space: pre-wrap;
 }

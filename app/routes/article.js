@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var blogController = require('../controllers/blogController');
 var mongoose = require('mongoose');
-var articleModel = require('../models/article');
+// var articleModel = require('../models/article');
 var article = mongoose.model('article');
 
 /* Create new article */

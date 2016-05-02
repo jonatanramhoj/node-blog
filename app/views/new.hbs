@@ -4,15 +4,18 @@
 	<div class="o-width-limiter o-width-limiter--medium">
 		<form class="c-form" action="/article/new" method="post">
 			<fieldset class="c-form__item">
-				<input class="c-form__input" type="text" name="title" placeholder="Title">
+				<input class="c-form__input" type="text" name="title" placeholder="Title" required>
 			</fieldset>
-			<fieldset class="c-form__item">
-				<textarea class="c-form__input c-form__input--textarea" name="body" rows="8" cols="40" placeholder="Write something"></textarea>
-			</fieldset>
+			<!-- <fieldset class="c-form__item">
+				<textarea class="c-form__input c-form__input--textarea" name="body" rows="8" cols="40" placeholder="Write something" required></textarea>
+			</fieldset> -->
 			<fieldset class="c-form__item">
 				<input class="c-form__input" type="text" name="tags" placeholder="Tags. For example: #CSS #jQuery #UX">
 			</fieldset>
+
+			<textarea name="body" required>Easy! You should check out MoxieManager!</textarea>
 			<button class="c-btn c-form__submit" type="submit" name="button">Save article</button>
+
 		</form>
 	</div>
 </div>
