@@ -1,8 +1,11 @@
-{{>nav}}
+{{> nav modifier="c-nav--new"}}
 
 <div role="main">
 	<div class="o-width-limiter o-width-limiter--medium">
 		<form class="c-form" action="/article/new" method="post">
+			<fieldset class="c-form__item">
+				<input class="c-form__input" type="text" name="image" placeholder="Image url">
+			</fieldset>
 			<fieldset class="c-form__item">
 				<input class="c-form__input" type="text" name="title" placeholder="Title" required>
 			</fieldset>
@@ -19,6 +22,5 @@
 		</form>
 	</div>
 </div>
-
 
 {{>copyright}}

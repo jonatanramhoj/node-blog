@@ -1,8 +1,8 @@
 {{>nav}}
 
-<section id="hero" class="c-hero o-fixed-bg" role="banner" style="background-image:url({{articles.featured.image}})">
+{{#each featured}}
+<section id="hero" class="c-hero o-fixed-bg" role="banner" style="background-image:url({{image}})">
 	<div class="c-hero__inner js-fade-hero-content">
-		{{#each featured}}
 		<h1 class="c-hero__heading">{{title}}</h1>
 		<span class="c-hero__subheading">
 			<span class="c-hero__tag">{{formatDate date 'DD MMMM YYYY'}}</span>
@@ -10,11 +10,11 @@
 			<span class="c-hero__tag">{{tags}}</span>
 		</span>
 		<a href="article/{{_id}}" class="c-btn c-btn--secondary">Read article</a>
-		{{/each}}
 	</div>
 	<a href="#posts" class="c-hero__arrow c-hero__arrow--active js-go-to-section js-fade-hero-content"><i class="lnr-chevron-down"></i></a>
 	<aside class="c-hero__overlay"></aside>
 </section>
+{{/each}}
 
 <div role="main">
 	<section id="posts" class="c-posts">
@@ -23,7 +23,11 @@
 				{{#each articles}}
 				<li class="o-grid__col o-grid__col--2">
 					<a href="article/{{_id}}" class="c-post">
-						<img class="c-post__image" src="../img/abstract.jpg" alt="Blogpost">
+						{{#if image}}
+						<img class="c-post__image" src="{{image}}" alt="Blogpost">
+						{{else}}
+						<img class="c-post__image" src="../../img/abstract.jpg" alt="Blogpost">
+						{{/if}}
 						<div class="c-post__caption">
 							<p class="c-post__date">{{formatDate date 'DD MMMM YYYY'}}</p>
 							<h2 class="c-post__heading">{{title}}</h2>
@@ -37,8 +41,8 @@
 	</section>
 </div>
 
-<div class="c-pagination">
+<!-- <div class="c-pagination">
 	<a href="#" class="c-pagination__button">Load more<i class="c-pagination__icon lnr-arrow-down"></i></a>
-</div>
+</div> -->
 
 {{>copyright}}

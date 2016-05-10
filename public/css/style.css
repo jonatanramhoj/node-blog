@@ -221,6 +221,15 @@ strong {
 	transition: all .2s ease-in-out;
 }
 
+.c-nav--new .c-nav__link,
+.c-nav--new .c-nav__link:visited {
+	color: #222;
+}
+
+.c-nav--new .c-nav__link:hover {
+	border-color: #222;
+}
+
 .c-nav__link:hover {
 	border-color: #fff;
 }

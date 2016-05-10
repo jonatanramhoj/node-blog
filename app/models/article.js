@@ -7,7 +7,8 @@ var articleSchema = new Schema({
 	title: String,
 	body: String,
 	tags: String,
-	date: {type: Date, default: Date.now}
+	date: {type: Date, default: Date.now},
+	image: String
 });
 
 // Create the article model
