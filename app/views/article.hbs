@@ -6,7 +6,7 @@
 		<span class="c-hero__subheading">
 			<span class="c-hero__tag">{{formatDate date 'DD MMMM YYYY'}}</span>
 			<span class="c-hero__tag">By {{author}}</span>
-			<span class="c-hero__tag">{{tags}}</span>
+			{{#if tags}}<span class="c-hero__tag">{{tags}}</span>{{/if}}
 		</span>
 		<a href="/" class="c-btn c-btn--secondary">More articles</a>
 	</div>
@@ -16,11 +16,9 @@
 
 <div role="main">
 	<section id="article" class="c-section">
-		<div class="o-width-limiter o-width-limiter--x-small">
+		<div class="o-width-limiter o-width-limiter--small">
 			<article class="c-article s-text">
 				{{{body}}}
-<!-- <pre class="c-code">
-</pre> -->
 			</article>
 		</div>
 	</section>

@@ -1,23 +1,32 @@
 {{> nav modifier="c-nav--new"}}
 
+<section id="hero" class="c-hero c-hero--small" role="banner">
+	<div class="c-hero__inner js-fade-hero-content">
+		<h1 class="c-hero__heading">{{title}}</h1>
+	</div>
+</section>
+
 <div role="main">
-	<div class="o-width-limiter o-width-limiter--medium">
+	<div class="o-width-limiter o-width-limiter--small">
 		<form class="c-form" action="/article/new" method="post">
 			<fieldset class="c-form__item">
-				<input class="c-form__input" type="text" name="image" placeholder="Image url">
+				<label class="c-form__label" for="image">Image <span class="c-form__label-optional">(Optional)</span></label>
+				<input class="c-form__input" type="text" name="image" id="image" placeholder="www.loremipsum/myimage.jpg">
 			</fieldset>
 			<fieldset class="c-form__item">
-				<input class="c-form__input" type="text" name="title" placeholder="Title" required>
+				<label class="c-form__label" for="title">Title</label>
+				<input class="c-form__input" type="text" name="title" id="title" placeholder="Lorem ipsum dolor sit amet" required>
 			</fieldset>
-			<!-- <fieldset class="c-form__item">
-				<textarea class="c-form__input c-form__input--textarea" name="body" rows="8" cols="40" placeholder="Write something" required></textarea>
-			</fieldset> -->
 			<fieldset class="c-form__item">
-				<input class="c-form__input" type="text" name="tags" placeholder="Tags. For example: #CSS #jQuery #UX">
+				<label class="c-form__label" for="tags">Tags</label>
+				<input class="c-form__input" type="text" name="tags" id="tags" placeholder="#CSS #jQuery #UX">
 			</fieldset>
-
-			<textarea name="body" required>Easy! You should check out MoxieManager!</textarea>
-			<button class="c-btn c-form__submit" type="submit" name="button">Save article</button>
+			<fieldset class="c-form__item">
+				<label class="c-form__label" for="body">Body</label>
+				<button class="c-form__show-wysiwyg">Write something</button>
+			</fieldset>
+			<textarea class="c-form__wysiwyg" name="body" required></textarea>
+			<!--<button class="c-btn c-form__submit" type="submit" name="button">Save article</button> -->
 
 		</form>
 	</div>

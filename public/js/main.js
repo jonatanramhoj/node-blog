@@ -106,3 +106,11 @@ $('body').on('click', '.js-go-to-section', function (e) {
 		scrollTop: $section.offset().top
 	}, 400);
 });
+
+// TinyMCE
+tinymce.init({
+	selector: '.c-form__wysiwyg',
+	content_css: '/js/vendor/tinymce/skins/custom/custom-theme.css',
+	plugins: 'codesample, fullscreen',
+	toolbar: 'codesample, fullscreen'
+});

@@ -25,7 +25,7 @@ router.post('/new', function (req, res) {
 /* Show new article page */
 router.get('/new', function (req, res) {
 	res.render('new', {
-		title: 'New article - jonatanramhoj.co'
+		title: 'New article'
 	});
 });
 
