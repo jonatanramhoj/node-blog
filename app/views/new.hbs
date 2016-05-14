@@ -14,20 +14,18 @@
 				<input class="c-form__input" type="text" name="image" id="image" placeholder="www.loremipsum/myimage.jpg">
 			</fieldset>
 			<fieldset class="c-form__item">
-				<label class="c-form__label" for="title">Title</label>
-				<input class="c-form__input" type="text" name="title" id="title" placeholder="Lorem ipsum dolor sit amet" required>
+				<label class="c-form__label" for="tags">Tags <span class="c-form__label-optional">(Optional)</span></label>
+				<input class="c-form__input" type="text" name="tags" id="tags" placeholder="#react #angular #ember">
 			</fieldset>
 			<fieldset class="c-form__item">
-				<label class="c-form__label" for="tags">Tags</label>
-				<input class="c-form__input" type="text" name="tags" id="tags" placeholder="#CSS #jQuery #UX">
+				<label class="c-form__label" for="title">Title <span class="c-form__label-optional">(Required)</span></label>
+				<input class="c-form__input" type="text" name="title" id="title" placeholder="lorem ipsum dolor sit amet" required>
 			</fieldset>
 			<fieldset class="c-form__item">
-				<label class="c-form__label" for="body">Body</label>
-				<button class="c-form__show-wysiwyg">Write something</button>
+				<label class="c-form__label c-form__label--wysiwyg" for="body">Body <span class="c-form__label-optional">(Required)</span></label>
+				<textarea class="c-form__wysiwyg" name="body" required></textarea>
 			</fieldset>
-			<textarea class="c-form__wysiwyg" name="body" required></textarea>
-			<!--<button class="c-btn c-form__submit" type="submit" name="button">Save article</button> -->
-
+			<button class="c-btn c-btn--small" type="submit" name="button">Publish</button>
 		</form>
 	</div>
 </div>
