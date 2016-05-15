@@ -8,7 +8,10 @@ var articleSchema = new Schema({
 	body: String,
 	tags: String,
 	date: {type: Date, default: Date.now},
-	image: String
+	image: String,
+	author: {
+		type: mongoose.Schema.Types.ObjectId, ref: 'user'
+	}
 });
 
 // Create the article model

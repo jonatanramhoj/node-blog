@@ -8,13 +8,15 @@ var bodyParser = require('body-parser');
 var hbs = require('hbs');
 var mongoose = require('mongoose');
 var moment = require('moment');
+var passport = require('passport');
+var expressSession = require('express-session');
 
 // Connect to DB
 mongoose.connect('mongodb://localhost/blogDB');
 
 // Include routes
-var index = require('./app/routes/index');
-var article = require('./app/routes/article');
+var index = require('./app/routes/index')(passport);
+var article = require('./app/routes/article')(passport);
 
 // Setup express instance
 var app = express();
@@ -31,6 +33,24 @@ hbs.registerHelper('formatDate', function(date, format) {
 // view engine setup
 app.set('views', path.join(__dirname, '/app/views'));
 app.set('view engine', 'hbs');
+
+// Configuring Passport
+app.use(expressSession({
+	secret: 'mySecretKey',
+	resave: true,
+	saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Using the flash middleware provided by connect-flash to store messages in session
+// and displaying in templates
+var flash = require('connect-flash');
+app.use(flash());
+
+// Initialize Passport
+var initPassport = require('./app/passport/init');
+initPassport(passport);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

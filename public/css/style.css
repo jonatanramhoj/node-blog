@@ -193,6 +193,10 @@ strong {
 	position: absolute;
 }
 
+.c-nav--new .c-nav--active {
+	background: none;
+}
+
 .c-nav__list {
 	align-self: center;
 }
@@ -761,10 +765,11 @@ strong {
 	font-size: 12px;
 	font-weight: bold;
 	text-transform: uppercase;
+	margin-bottom: 6px;
 }
 
 .c-form__label--wysiwyg {
-	margin-bottom: 6px;
+	margin-bottom: 12px;
 }
 
 .c-form__label-optional {
@@ -886,6 +891,18 @@ strong {
 @media (max-width: 600px) {
 	.s-text h3 {
 		font-size: 24px;
+	}
+}
+
+.s-text h4 {
+	font-family: 'Montserrat', 'Sans-serif';
+	font-size: 24px;
+	font-weight: bold;
+}
+
+@media (max-width: 600px) {
+	.s-text h4 {
+		font-size: 18px;
 	}
 }
 
