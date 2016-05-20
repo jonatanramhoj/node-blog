@@ -345,7 +345,7 @@ strong {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: -10px;
+	margin: 0 -10px;
 }
 
 .o-grid__col {
@@ -537,20 +537,20 @@ strong {
 	display: inline-block;
 	text-align: center;
 	font-size: 14px;
-	line-height: 1;
 	vertical-align: middle;
 	border: 1px solid #444;
 	border-radius: 3px;
-	padding: 20px 25px;
+	padding: 15px 25px;
 	text-decoration: none;
 	font-weight: 700;
 	text-transform: uppercase;
-	transition: all .4s ease-in-out;
+	transition: all .2s ease-in-out;
 }
 
 .c-btn:hover {
-	background: #444;
-	color: #fff;
+	/*background: #444;*/
+	border-color: #999;
+	color: #999;
 }
 
 .c-btn--secondary {
@@ -566,6 +566,15 @@ strong {
 .c-btn--small {
 	font-size: 12px;
 	padding: 15px 20px;
+}
+
+.c-btn--large {
+	display: block;
+	width: 100%;
+}
+
+.c-btn--light {
+	border-color: #cacaca;
 }
 
 /*----------------------------------------------------------
@@ -651,6 +660,10 @@ strong {
 	.t-show-for-mobile {
 		display: block;
 	}
+}
+
+.t-text-align-center {
+	text-align: center;
 }
 
 /*----------------------------------------------------------
@@ -744,20 +757,39 @@ strong {
 	#Forms
 ----------------------------------------------------------*/
 .c-form {
-	max-width: 500px;
 	margin: 160px auto 0;
 }
 
+.c-form--small {
+	max-width: 300px;
+}
+
+.c-form--large {
+	max-width: 500px;
+}
+
 .c-form__item {
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 }
 
 .c-form__input {
 	width: 100%;
-	border: 0;
-	font-size: 18px;
+	padding: 15px;
+	border: 1px solid #444;
+	border-radius: 3px;
+	font-size: 14px;
 	outline: none;
 	line-height: normal;
+}
+
+.c-form__input--light {
+	border-color: #cacaca; /* Same as tinymce */
+}
+
+.c-form__input--clean {
+	font-size: 18px;
+	border: 0;
+	padding: 0;
 }
 
 .c-form__label {
@@ -779,9 +811,29 @@ strong {
 	color: #aaa;
 }
 
-.c-form__show-wysiwyg {
-	color: #aaa;
-	font-size: 18px;
+.c-form__heading {
+	font-size: 48px;
+	text-align: center;
+	margin: 0 auto 48px;
+}
+
+.c-form__submit-btn {
+	margin-bottom: 20px;
+}
+
+.c-form__register-link,
+.c-form__register-link:visited {
+	color: #444;
+	border-bottom: 1px solid #444;
+	transition: all 0.2s ease;
+}
+
+.c-form__register-link:hover {
+	border-color: transparent;
+}
+
+.c-form__register-fields {
+	margin-bottom: 30px;
 }
 
 /*----------------------------------------------------------

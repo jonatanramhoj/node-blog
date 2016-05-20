@@ -1,33 +1,45 @@
 {{> nav}}
 
 <div role="main">
-	<div class="o-width-limiter o-width-limiter--small">
+	<div class="o-width-limiter o-width-limiter--x-small">
 		<form class="c-form" action="/signup" method="post">
 			<legend class="c-form__heading">Register</legend>
-			<fieldset class="c-form__item">
-				<label class="c-form__label" for="username">Username</label>
-				<input class="c-form__input" type="text" name="username" id="username" placeholder="Username" required autofocus>
-			</fieldset>
-			<fieldset class="c-form__item">
-				<label class="c-form__label" for="password">Password</label>
-				<input class="c-form__input" type="password" name="password" id="password" placeholder="Password" required>
-			</fieldset>
-			<fieldset class="c-form__item">
-				<label class="c-form__label" for="email">Email</label>
-				<input class="c-form__input" type="email" name="email" id="email" placeholder="Email" required>
-			</fieldset>
-			<fieldset class="c-form__item">
-				<label class="c-form__label" for="firstname">Firstname</label>
-				<input class="c-form__input" type="firstname" name="firstname" id="firstname" placeholder="First name" required>
-			</fieldset>
-			<fieldset class="c-form__item">
-				<label class="c-form__label" for="lastname">Lastname</label>
-				<input class="c-form__input" type="lastname" name="lastname" id="lastname" placeholder="Last name" required>
-			</fieldset>
-			<button class="c-btn c-btn--small" type="submit" name="button">Register</button>
-			{{#if message}}
-				<span class="t-error">{{message}}</span>
-			{{/if}}
+			<div class="c-form__register-fields">
+				<div class="o-grid">
+					<div class="o-grid__col o-grid__col--2">
+						<fieldset class="c-form__item">
+							<label class="c-form__label" for="username">Username</label>
+							<input class="c-form__input" type="text" name="username" id="username" placeholder="for example: keith" required autofocus>
+						</fieldset>
+						<fieldset class="c-form__item">
+							<label class="c-form__label" for="password">Password</label>
+							<input class="c-form__input" type="password" name="password" id="password" placeholder="somethingsecret" required>
+						</fieldset>
+						<fieldset class="c-form__item">
+							<label class="c-form__label" for="email">Email</label>
+							<input class="c-form__input" type="email" name="email" id="email" placeholder="keith@google.com" required>
+						</fieldset>
+					</div>
+					<div class="o-grid__col o-grid__col--2">
+						<fieldset class="c-form__item">
+							<label class="c-form__label" for="firstname">Firstname</label>
+							<input class="c-form__input" type="firstname" name="firstname" id="firstname" placeholder="keith" required>
+						</fieldset>
+						<fieldset class="c-form__item">
+							<label class="c-form__label" for="lastname">Lastname</label>
+							<input class="c-form__input" type="lastname" name="lastname" id="lastname" placeholder="urban" required>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+			<div class="o-grid">
+				<div class="o-grid__col o-grid__col--2">
+					<button class="c-btn c-btn--large" type="submit" name="button">Register</button>
+					{{#if message}}
+						<span class="t-error">{{message}}</span>
+					{{/if}}
+				</div>
+			</div>
 		</form>
 	</div>
 </div>
