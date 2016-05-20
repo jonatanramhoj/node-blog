@@ -10,7 +10,8 @@ var articleSchema = new Schema({
 	date: {type: Date, default: Date.now},
 	image: String,
 	author: {
-		type: mongoose.Schema.Types.ObjectId, ref: 'user'
+		type: Schema.Types.ObjectId,
+		ref: 'user'
 	}
 });
 

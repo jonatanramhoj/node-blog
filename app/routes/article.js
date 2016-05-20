@@ -26,7 +26,7 @@ module.exports = function (passport) {
 	});
 
 	/* POST new article */
-	router.post('/new', function (req, res) {
+	router.post('/new', isAuthenticated, function (req, res) {
 		var data = req.body;
 		var newArticle = new article(data);
 
@@ -36,7 +36,7 @@ module.exports = function (passport) {
 			} else {
 				console.log('saved:', data);
 				// TODO prompt user to confirm article before redirect to start
-				res.redirect('/');
+				res.redirect('/', {user: req.user});
 			}
 		});
 		// res.sendStatus(200);
@@ -47,7 +47,10 @@ module.exports = function (passport) {
 		var id = req.params.id;
 
 		article.findById(id, function (err, single) {
-			res.render('article', single);
+			res.render('article', {
+				single: single,
+				user: req.user
+			});
 		});
 	});
 
