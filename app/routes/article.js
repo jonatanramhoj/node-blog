@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var blogController = require('../controllers/blogController');
 var mongoose = require('mongoose');
-// var articleModel = require('../models/article');
+var articleModel = require('../models/article');
 var article = mongoose.model('article');
 
 var isAuthenticated = function (req, res, next) {
@@ -26,17 +26,17 @@ module.exports = function (passport) {
 	});
 
 	/* POST new article */
-	router.post('/new', isAuthenticated, function (req, res) {
-		var data = req.body;
-		var newArticle = new article(data);
+	router.post('/new', function (req, res) {
+		console.log('req.body:', req.body);
+		var newArticle = new article(req.body);
 
-		newArticle.save(function (err, data) {
+		newArticle.save(function (err) {
 			if (err) {
 				console.log('err:', err);
 			} else {
-				console.log('saved:', data);
+				// console.log('saved:', data);
 				// TODO prompt user to confirm article before redirect to start
-				res.redirect('/', {user: req.user});
+				res.redirect('/');
 			}
 		});
 		// res.sendStatus(200);
@@ -46,7 +46,7 @@ module.exports = function (passport) {
 	router.get('/:id', function(req, res, next) {
 		var id = req.params.id;
 
-		article.findById(id, function (err, single) {
+		article.findById(id).populate('author').exec(function (err, single) {
 			res.render('article', {
 				single: single,
 				user: req.user

@@ -18,8 +18,8 @@ module.exports = function (passport) {
 
 	// GET home page
 	router.get('/', function(req, res, next) {
-		article.find().sort({date: -1}).exec(function (err, articles) {
-			article.find().limit(1).sort({date: -1}).exec(function(err, latest) {
+		article.find().sort({date: -1}).populate('author').exec(function (err, articles) {
+			article.find().limit(1).sort({date: -1}).populate('author').exec(function(err, latest) {
 				if (err) {
 					return res.render('500');
 				} else {

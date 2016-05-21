@@ -5,7 +5,7 @@
 		<h1 class="c-hero__heading">{{single.title}}</h1>
 		<span class="c-hero__subheading">
 			<span class="c-hero__tag">{{formatDate single.date 'DD MMMM YYYY'}}</span>
-			<span class="c-hero__tag">By {{single.author}}</span>
+			<span class="c-hero__tag">By {{single.author.username}}</span>
 			{{#if single.tags}}<span class="c-hero__tag">{{single.tags}}</span>{{/if}}
 		</span>
 		<a href="/" class="c-btn c-btn--secondary">More articles</a>

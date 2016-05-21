@@ -10,22 +10,23 @@
 	<div class="o-width-limiter o-width-limiter--small">
 		<form class="c-form c-form--large" action="/article/new" method="post">
 			<fieldset class="c-form__item">
+				<label class="c-form__label" for="title">Title <span class="c-form__label-optional">(Required)</span></label>
+				<input class="c-form__input c-form__input--light" type="text" name="title" id="title" placeholder="lorem ipsum dolor sit amet" required>
+			</fieldset>
+			<fieldset class="c-form__item">
+				<label class="c-form__label c-form__label--wysiwyg" for="body">Body <span class="c-form__label-optional">(Required)</span></label>
+				<textarea class="c-form__wysiwyg" name="body"></textarea>
+			</fieldset>
+			<fieldset class="c-form__item">
 				<label class="c-form__label" for="image">Image <span class="c-form__label-optional">(Optional)</span></label>
 				<input class="c-form__input c-form__input--light" type="text" name="image" id="image" placeholder="www.loremipsum/myimage.jpg">
 			</fieldset>
 			<fieldset class="c-form__item">
 				<label class="c-form__label" for="tags">Tags <span class="c-form__label-optional">(Optional)</span></label>
 				<input class="c-form__input c-form__input--light" type="text" name="tags" id="tags" placeholder="#react #angular #ember">
+				<input type="text" name="author" id="author" style="display:none" value="{{user._id}}">
 			</fieldset>
-			<fieldset class="c-form__item">
-				<label class="c-form__label" for="title">Title <span class="c-form__label-optional">(Required)</span></label>
-				<input class="c-form__input c-form__input--light" type="text" name="title" id="title" placeholder="lorem ipsum dolor sit amet" required>
-			</fieldset>
-			<fieldset class="c-form__item">
-				<label class="c-form__label c-form__label--wysiwyg" for="body">Body <span class="c-form__label-optional">(Required)</span></label>
-				<textarea class="c-form__wysiwyg" name="body" required></textarea>
-			</fieldset>
-			<button class="c-btn c-btn--light" type="submit" name="button">Publish</button>
+			<button class="c-btn" type="submit" name="button">Publish</button>
 		</form>
 	</div>
 </div>
