@@ -114,3 +114,18 @@ tinymce.init({
 	plugins: 'codesample, fullscreen',
 	toolbar: 'codesample, fullscreen'
 });
+
+// Delete article
+$('body').on('click', '.c-post__edit--delete', function (e) {
+	e.preventDefault();
+
+	$.ajax({
+		type: 'delete',
+		url: $(this).attr('href'),
+		success: function (response) {
+			console.log('response:', response);
+			// reload page
+			window.location.reload();
+		}
+	});
+});

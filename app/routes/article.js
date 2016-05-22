@@ -54,7 +54,48 @@ module.exports = function (passport) {
 		});
 	});
 
+	/* GET edit article page */
+	router.get('/edit/:id', function (req, res) {
+		var id = req.params.id;
+		article.findById(id).exec(function (err, single) {
+			res.render('edit', {
+				title: 'Edit article',
+				single: single,
+				user: req.user
+			});
+		});
+	});
+
+	/* Update article */
+	router.post('/edit/:id', function (req, res) {
+		var id = req.params.id;
+		// Find article by id and update
+		article.update({_id: id}, {$set: req.body}, function (err) {
+			if (err) {
+				console.log('err:', err);
+				res.sendStatus(304);
+			} else {
+				// res.sendStatus(200);
+				res.redirect('/');
+			}
+		});
+	});
+
+	/* Delete article */
+	router.delete('/:id', function (req, res) {
+		var id = req.params.id;
+
+		article.remove({_id: id}, function (err) {
+			if (err) {
+				console.log('err:', err);
+				res.sendStatus(304);
+			} else {
+				res.sendStatus(200);
+				console.log('success');
+			}
+		});
+	});
+
 	return router;
 }
 
-// module.exports = router;

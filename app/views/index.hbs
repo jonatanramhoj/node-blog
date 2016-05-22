@@ -22,18 +22,24 @@
 			<ul class="o-grid o-grid--airy">
 				{{#each articles}}
 				<li class="o-grid__col o-grid__col--2">
-					<a href="article/{{_id}}" class="c-post">
-						{{#if image}}
-						<img class="c-post__image" src="{{image}}" alt="Blogpost">
-						{{else}}
-						<img class="c-post__image" src="../../img/abstract.jpg" alt="Blogpost">
+					<div class="c-post">
+						{{#if ../user}}
+							<a href="/article/edit/{{_id}}" class="c-post__edit">Edit</a>
+							<a href="/article/{{_id}}" class="c-post__edit c-post__edit--delete">Delete</a>
 						{{/if}}
-						<div class="c-post__caption">
-							<p class="c-post__date">{{formatDate date 'DD MMMM YYYY'}}</p>
-							<h2 class="c-post__heading">{{title}}</h2>
-							<p class="c-post__tag">{{tags}}</p>
-						</div>
-					</a>
+						<a href="/article/{{_id}}" class="c-post__link">
+							{{#if image}}
+								<img class="c-post__image" src="{{image}}" alt="Blogpost">
+							{{else}}
+								<img class="c-post__image" src="../../img/abstract.jpg" alt="Blogpost">
+							{{/if}}
+							<div class="c-post__caption">
+								<p class="c-post__date">{{formatDate date 'DD MMMM YYYY'}}</p>
+								<h2 class="c-post__heading">{{title}}</h2>
+								<p class="c-post__tag">{{tags}}</p>
+							</div>
+						</a>
+					</div>
 				</li>
 				{{/each}}
 			</ul>
