@@ -48,6 +48,7 @@ module.exports = function (passport) {
 
 		article.findById(id).populate('author').exec(function (err, single) {
 			res.render('article', {
+				title: single.title,
 				single: single,
 				user: req.user
 			});
