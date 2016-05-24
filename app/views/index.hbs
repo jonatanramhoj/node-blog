@@ -1,7 +1,7 @@
 {{>nav}}
 
 {{#each featured}}
-<section id="hero" class="c-hero o-fixed-bg" role="banner" style="background-image:url({{image}})">
+<section id="hero" class="c-hero o-fixed-bg" role="banner" {{#if image}}style="background-image:url({{image}})"{{/if}}>
 	<div class="c-hero__inner js-fade-hero-content">
 		<h1 class="c-hero__heading">{{title}}</h1>
 		<span class="c-hero__subheading">
@@ -17,26 +17,28 @@
 {{/each}}
 
 <div role="main">
-	<section id="posts" class="c-posts">
+	<section id="posts" class="c-teasers">
 		<div class="o-width-limiter o-width-limiter--medium">
 			<ul class="o-grid o-grid--airy">
 				{{#each articles}}
 				<li class="o-grid__col o-grid__col--2">
-					<div class="c-post">
+					<div class="c-teaser">
 						{{#if ../user}}
-							<a href="/article/edit/{{_id}}" class="c-post__edit">Edit</a>
-							<a href="/article/{{_id}}" class="c-post__edit c-post__edit--delete">Delete</a>
+							<a href="/article/edit/{{_id}}" class="c-teaser__edit">Edit</a>
+							<a href="/article/{{_id}}" class="c-teaser__edit c-teaser__edit--delete">Delete</a>
 						{{/if}}
-						<a href="/article/{{_id}}" class="c-post__link">
+						<a href="/article/{{_id}}" class="c-teaser__content-wrapper">
+							<div class="c-teaser__media">
 							{{#if image}}
-								<img class="c-post__image" src="{{image}}" alt="Blogpost">
+								<img class="c-teaser__image" src="{{image}}" alt="">
 							{{else}}
-								<img class="c-post__image" src="../../img/abstract.jpg" alt="Blogpost">
+								<img class="c-teaser__image" src="../../img/abstract.jpg" alt="">
 							{{/if}}
-							<div class="c-post__caption">
-								<p class="c-post__date">{{formatDate date 'DD MMMM YYYY'}}</p>
-								<h2 class="c-post__heading">{{title}}</h2>
-								<p class="c-post__tag">{{tags}}</p>
+							</div>
+							<div class="c-teaser__caption">
+								<p class="c-teaser__date">{{formatDate date 'DD MMMM YYYY'}}</p>
+								<h2 class="c-teaser__heading">{{title}}</h2>
+								<p class="c-teaser__tag">{{tags}}</p>
 							</div>
 						</a>
 					</div>

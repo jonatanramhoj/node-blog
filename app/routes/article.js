@@ -67,10 +67,10 @@ module.exports = function (passport) {
 		});
 	});
 
-	/* Update article */
+	/* UPDATE article */
 	router.post('/edit/:id', function (req, res) {
 		var id = req.params.id;
-		// Find article by id and update
+		// Find article by id and update model
 		article.update({_id: id}, {$set: req.body}, function (err) {
 			if (err) {
 				console.log('err:', err);
@@ -82,7 +82,7 @@ module.exports = function (passport) {
 		});
 	});
 
-	/* Delete article */
+	/* DELETE article */
 	router.delete('/:id', function (req, res) {
 		var id = req.params.id;
 
