@@ -24,7 +24,7 @@ module.exports = function (passport) {
 					return res.render('500');
 				} else {
 					res.render('index', {
-						title: 'jonatanramhoj.co - blog',
+						title: 'jonatanramhoj.co/blog',
 						articles: articles, // Show all articles
 						featured: latest, // Show latest article
 						user: req.user

@@ -561,8 +561,28 @@ strong {
 }
 
 .c-teaser__media {
+	position: relative;
 	overflow: hidden;
 	margin-bottom: 40px;
+}
+
+.c-teaser__overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background: rgba(0,0,0,0.6);*/
+	background: rgba(255,255,255, 0.5);
+	opacity: 0;
+	transition: all .2s ease-in-out;
+}
+
+.c-teaser:hover .c-teaser__overlay,
+.c-teaser:focus .c-teaser__overlay {
+	opacity: 1;
 }
 
 .c-teaser__image {
@@ -606,6 +626,16 @@ strong {
 .c-teaser__edit:hover {
 	border-color: transparent;
 }
+
+/*.c-teaser__icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 60px;
+	color: #fff;
+	transition: all .2s ease-in-out;
+}*/
 
 /*----------------------------------------------------------
 	#Pagination

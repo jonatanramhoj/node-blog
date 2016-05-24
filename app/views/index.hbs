@@ -11,7 +11,9 @@
 		</span>
 		<a href="article/{{_id}}" class="c-btn c-btn--secondary">Read article</a>
 	</div>
-	<a href="#posts" class="c-hero__arrow c-hero__arrow--active js-go-to-section js-fade-hero-content"><i class="lnr-chevron-down"></i></a>
+	<a href="#posts" class="c-hero__arrow c-hero__arrow--active js-go-to-section js-fade-hero-content">
+		<span class="lnr-chevron-down" aria-hidden="true"></span>
+	</a>
 	<aside class="c-hero__overlay"></aside>
 </section>
 {{/each}}
@@ -22,11 +24,11 @@
 			<ul class="o-grid o-grid--airy">
 				{{#each articles}}
 				<li class="o-grid__col o-grid__col--2">
+					{{#if ../user}}
+						<a href="/article/edit/{{_id}}" class="c-teaser__edit">Edit</a>
+						<a href="/article/{{_id}}" class="c-teaser__edit c-teaser__edit--delete">Delete</a>
+					{{/if}}
 					<div class="c-teaser">
-						{{#if ../user}}
-							<a href="/article/edit/{{_id}}" class="c-teaser__edit">Edit</a>
-							<a href="/article/{{_id}}" class="c-teaser__edit c-teaser__edit--delete">Delete</a>
-						{{/if}}
 						<a href="/article/{{_id}}" class="c-teaser__content-wrapper">
 							<div class="c-teaser__media">
 							{{#if image}}
@@ -34,6 +36,9 @@
 							{{else}}
 								<img class="c-teaser__image" src="../../img/abstract.jpg" alt="">
 							{{/if}}
+								<div class="c-teaser__overlay">
+									<!-- <span class="c-teaser__icon lnr-eye" aria-hidden="true"></span> -->
+								</div>
 							</div>
 							<div class="c-teaser__caption">
 								<p class="c-teaser__date">{{formatDate date 'DD MMMM YYYY'}}</p>

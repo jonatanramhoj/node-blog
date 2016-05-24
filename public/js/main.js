@@ -115,8 +115,8 @@ tinymce.init({
 	toolbar: 'codesample, fullscreen'
 });
 
-// Delete article
-$('body').on('click', '.c-post__edit--delete', function (e) {
+// Delete article TODO: Add dialog and confirm functionality
+$('body').on('click', '.c-teaser__edit--delete', function (e) {
 	e.preventDefault();
 
 	$.ajax({
