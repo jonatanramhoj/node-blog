@@ -18,14 +18,14 @@ module.exports = function (passport) {
 
 	// GET home page
 	router.get('/', function(req, res, next) {
-		article.find().sort({date: -1}).populate('author').exec(function (err, articles) {
+		article.find().skip(1).sort({date: -1}).populate('author').exec(function (err, articles) {
 			article.find().limit(1).sort({date: -1}).populate('author').exec(function(err, latest) {
 				if (err) {
 					return res.render('500');
 				} else {
 					res.render('index', {
-						title: 'jonatanramhoj.co/blog',
-						articles: articles, // Show all articles
+						title: 'jonatanramhoj/blog',
+						articles: articles, // Show all articles (skip latest)
 						featured: latest, // Show latest article
 						user: req.user
 					});

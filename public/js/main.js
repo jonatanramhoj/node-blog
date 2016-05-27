@@ -115,17 +115,19 @@ tinymce.init({
 	toolbar: 'codesample, fullscreen'
 });
 
-// Delete article TODO: Add dialog and confirm functionality
-$('body').on('click', '.c-teaser__edit--delete', function (e) {
+// Delete article
+$('body').on('click', '.c-edit__link--delete', function (e) {
 	e.preventDefault();
 
-	$.ajax({
-		type: 'delete',
-		url: $(this).attr('href'),
-		success: function (response) {
-			console.log('response:', response);
-			// reload page
-			window.location.reload();
-		}
-	});
+	if (confirm('Are you sure you want to delete this article?')) {
+		$.ajax({
+			type: 'delete',
+			url: $(this).attr('href'),
+			success: function (response) {
+				console.log('response:', response);
+				// reload page
+				window.location.reload();
+			}
+		});
+	}
 });
