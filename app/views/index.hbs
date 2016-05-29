@@ -13,7 +13,7 @@
 		<span class="c-hero__subheading">
 			<span class="c-hero__tag">{{formatDate date 'DD MMMM YYYY'}}</span>
 			<span class="c-hero__tag">By {{author.username}}</span>
-			<span class="c-hero__tag">{{tags}}</span>
+			{{#if tags}}<span class="c-hero__tag">{{tags}}</span>{{/if}}
 		</span>
 		<a href="article/{{_id}}" class="c-btn c-btn--secondary">Read article</a>
 	</div>
@@ -61,7 +61,7 @@
 </div>
 
 <div class="c-pagination">
-	<a href="#" class="c-pagination__button c-btn">Load more</a>
+	<a href="/" class="c-pagination__button c-btn c-btn--light">Load more (total {{total}})</a>
 </div>
 
 {{>copyright}}

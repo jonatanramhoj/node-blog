@@ -1,5 +1,6 @@
 // Module dependencies
 var mongoose = require('mongoose');
+var mongoosePaginate = require('mongoose-paginate');
 var Schema  = mongoose.Schema;
 
 // Database schema for model
@@ -14,6 +15,9 @@ var articleSchema = new Schema({
 		ref: 'user'
 	}
 });
+
+// Add pagination functionality to article model
+articleSchema.plugin(mongoosePaginate);
 
 // Create the article model
 var article = mongoose.model('article', articleSchema);
