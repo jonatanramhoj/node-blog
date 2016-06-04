@@ -325,13 +325,17 @@ strong {
 .c-footer {
 	position: relative;
 	background: #F4F5F7;
+	/*background: #111;*/
 	color: #222;
+	color: #fff;
+	padding: 80px;
+	margin-top: 160px;
 }
 
 @media screen and (max-width: 800px) {
 	.c-footer {
 		text-align: center;
-		padding: 100px 0;
+		padding: 40px 0;
 	}
 }
 
@@ -378,7 +382,9 @@ strong {
 }
 
 .c-footer__copyright {
-	color: #CCCCCC;
+	display: block;
+	color: #999;
+	font-size: 14px;
 }
 
 .c-footer--airy {
