@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var blogController = require('../controllers/blogController');
 var mongoose = require('mongoose');
 var article = mongoose.model('article');
 var paginate = require('express-paginate');
+
 var isAuthenticated = function (req, res, next) {
 	// if user is authenticated in the session, call the next() to call the next request handler
 	// Passport adds this method to request object. A middleware is allowed to add properties to
@@ -31,8 +31,9 @@ module.exports = function (passport) {
 				if (err) {
 					return res.render('500');
 				} else {
-					console.log('req:', req.page);
-					console.log('getArrayPages:', paginate.getArrayPages());
+					console.log('pageCount:', pageCount);
+					console.log('itemCount:', itemCount);
+					console.log('getArrayPages:', paginate.getArrayPages);
 					res.render('index', {
 						title: 'jonatanramhoj/blog',
 						articles: result.docs, // Show all articles (skip latest)

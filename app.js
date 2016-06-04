@@ -16,8 +16,8 @@ var paginate = require('express-paginate');
 mongoose.connect('mongodb://localhost/blogDB');
 
 // Include routes
-var index = require('./app/routes/index')(passport);
 var article = require('./app/routes/article')(passport);
+var index = require('./app/routes/index')(passport);
 
 // Setup express instance
 var app = express();
@@ -65,8 +65,8 @@ app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
 
 // Apply the routes to the application
-app.use('/', index);
 app.use('/article', article);
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
