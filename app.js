@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 var moment = require('moment');
 var passport = require('passport');
 var expressSession = require('express-session');
+var paginate = require('express-paginate');
 
 // Connect to DB
 mongoose.connect('mongodb://localhost/blogDB');
@@ -20,6 +21,9 @@ var article = require('./app/routes/article')(passport);
 
 // Setup express instance
 var app = express();
+
+// keep this before all routes that will use pagination
+app.use(paginate.middleware(6, 50)); // Limit, Max limit
 
 // Register hbs partials
 hbs.registerPartials(__dirname + '/app/views/partials');

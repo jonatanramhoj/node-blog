@@ -3,6 +3,7 @@ var router = express.Router();
 var blogController = require('../controllers/blogController');
 var mongoose = require('mongoose');
 var article = mongoose.model('article');
+
 var isAuthenticated = function (req, res, next) {
 	// if user is authenticated in the session, call the next() to call the next request handler
 	// Passport adds this method to request object. A middleware is allowed to add properties to
@@ -12,30 +13,21 @@ var isAuthenticated = function (req, res, next) {
 	// if the user is not authenticated then redirect him to the login page
 	res.redirect('/login');
 }
-var query = {};
-var options = {
-	sort: {date: -1},
-	populate: 'author',
-	// skip: 1, // Skip latest article
-	limit: 6 // Show 6 per page
-};
 
 module.exports = function (passport) {
 
 	// GET home page
 	router.get('/', function(req, res, next) {
-		article.paginate(query, options, function (err, articles) {
+		article.find().skip(1).sort({date: -1}).populate('author').exec(function (err, articles) {
 			article.find().limit(1).sort({date: -1}).populate('author').exec(function(err, latest) {
 				if (err) {
 					return res.render('500');
 				} else {
-					console.log('articles:', articles);
 					res.render('index', {
 						title: 'jonatanramhoj/blog',
-						articles: articles.docs, // Show all articles (skip latest)
+						articles: articles, // Show all articles (skip latest)
 						featured: latest, // Show latest article
-						user: req.user,
-						total: articles.total
+						user: req.user
 					});
 				}
 			});
