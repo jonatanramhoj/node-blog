@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var article = mongoose.model('article');
 var paginate = require('express-paginate');
+var hbs = require('hbs');
 
 var isAuthenticated = function (req, res, next) {
 	// if user is authenticated in the session, call the next() to call the next request handler
@@ -18,32 +19,39 @@ module.exports = function (passport) {
 
 	// GET home page
 	router.get('/', function(req, res, next) {
-		var query = {};
-		var options = {
-			sort: {date: -1},
-			populate: 'author',
-			offset: 1, // Skip latest article
-			page: req.query.page,
-			limit: req.query.limit // Show 6 per page
-		};
-		article.paginate(query, options, function (err, result, pageCount, itemCount) {
-			article.find().limit(1).sort({date: -1}).populate('author').exec(function(err, latest) {
+		var limit = 6;
+		var page = (req.query.page > 0 ? req.query.page : 1) - 1; // Get current page number
+
+		article.find().limit(limit).skip(limit * page).sort({date: -1}).exec(function (err, articles) {
 				if (err) {
 					return res.render('500');
 				} else {
-					console.log('pageCount:', pageCount);
-					console.log('itemCount:', itemCount);
-					console.log('getArrayPages:', paginate.getArrayPages);
-					res.render('index', {
-						title: 'jonatanramhoj/blog',
-						articles: result.docs, // Show all articles (skip latest)
-						featured: latest, // Show latest article
-						user: req.user,
-						total: result.total
-						// pages: paginate.getArrayPages(req)(3, pageCount, req.query.page)
+					article.count().exec(function (err, count) {
+						res.render('index', {
+							articles: articles,
+							page: page + 1,
+							pages: Math.ceil(count / limit)
+						});
 					});
 				}
-			});
+		});
+
+		// Pagination helper
+		hbs.registerHelper('pagination', function (pages, page) {
+			var url = require('url');
+			var qs = require('qs');
+			var params = qs.parse(url.parse(req.url).query);
+			var str = '';
+
+			params.page = 0;
+
+			for (var p = 1; p < pages + 1; p++) {
+				params.page = p;
+				clas = page == p ? 'active' : 'no';
+				str += '<li class="' + clas + '"><a href="?' + qs.stringify(params) + '">' + p + '</a></li>';
+			}
+
+			return str;
 		});
 	});
 

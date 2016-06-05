@@ -3,7 +3,6 @@ module.exports = function (grunt) {
 	// Include grunt plugins
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// Project config
 	grunt.initConfig({
