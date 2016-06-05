@@ -1,8 +1,9 @@
 module.exports = function (grunt) {
 
-	// Include grunt plugin
+	// Include grunt plugins
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	// Project config
 	grunt.initConfig({
@@ -22,16 +23,27 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-		uglify: {
+		// uglify: {
+		// 	dist: {
+		// 		files: {
+		// 			'./public/dist/js/all.min.js': ['./public/js/*.js']
+		// 		}
+		// 	}
+		// },
+		concat: {
 			dist: {
-				files: {
-					'./public/dist/js/all.min.js': ['./public/js/*.js']
-				}
+				src: [
+					'./public/js/jquery-2.2.0.js',
+					// './public/js/vendor/tinymce/tinymce.js',
+					'./public/js/vendor/prism/prism.js',
+					'./public/js/main.js'
+				],
+				dest: './public/dist/js/all.min.js'
 			}
 		}
 	});
 
 	// Register tasks
-	grunt.registerTask('default', ['postcss', 'uglify']);
+	grunt.registerTask('default', ['postcss', 'concat']);
 };
 
