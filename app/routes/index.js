@@ -30,12 +30,13 @@ module.exports = function (passport) {
 				} else {
 					article.count().exec(function (err, count) {
 						res.render('index', {
-							articles: articles,
+							featured: latest, // Latest
+							articles: articles, // List
 							page: page + 1,
 							pages: Math.ceil(count / limit),
-							featured: latest,
 							user: req.user,
-							count: count
+							count: count,
+							limit: limit
 						});
 					});
 				}
