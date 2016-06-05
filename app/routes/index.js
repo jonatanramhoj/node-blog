@@ -34,7 +34,8 @@ module.exports = function (passport) {
 							page: page + 1,
 							pages: Math.ceil(count / limit),
 							featured: latest,
-							user: req.user
+							user: req.user,
+							count: count
 						});
 					});
 				}
@@ -58,6 +59,14 @@ module.exports = function (passport) {
 			}
 
 			return str;
+		});
+
+		// Check if total articles are more than our page limit
+		hbs.registerHelper('ifCond', function (v1, v2, options) {
+			if (v1 > v2) {
+				return options.fn(this);
+			}
+			return options.inverse(this);
 		});
 	});
 
