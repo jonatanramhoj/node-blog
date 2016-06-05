@@ -52,8 +52,9 @@ module.exports = function (passport) {
 
 			for (var p = 1; p < pages + 1; p++) {
 				params.page = p;
-				clas = page == p ? 'active' : 'no';
-				str += '<li class="' + clas + '"><a href="?' + qs.stringify(params) + '">' + p + '</a></li>';
+				activeClass = page == p ? 'c-pagination__link--active' : '';
+				defaultClass = 'c-pagination__link';
+				str += '<li class="c-pagination__item"><a class="' + defaultClass + ' ' + activeClass + '" href="?' + qs.stringify(params) + '">' + p + '</a></li>';
 			}
 
 			return str;

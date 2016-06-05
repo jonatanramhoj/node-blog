@@ -646,8 +646,27 @@ strong {
 	#Pagination
 ----------------------------------------------------------*/
 .c-pagination {
-	margin: 0 auto;
+	display: flex;
+	justify-content: center;
 	text-align: center;
+}
+
+.c-pagination__item {
+	margin-right: 10px;
+}
+
+.c-pagination__item:last-child {
+	margin-right: 0;
+}
+
+.c-pagination__link,
+.c-pagination__link:visited {
+	font-size: 16px;
+	color: #444;
+}
+
+.c-pagination__link--active {
+	border-bottom: 1px solid #444;
 }
 
 .c-pagination__icon {
