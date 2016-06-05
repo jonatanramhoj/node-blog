@@ -21,8 +21,10 @@ module.exports = function (passport) {
 	router.get('/', function(req, res, next) {
 		var limit = 6;
 		var page = (req.query.page > 0 ? req.query.page : 1) - 1; // Get current page number
+		var skipNr = page === 0 ? 1 : limit * page; // Omit featured article from list
 
-		article.find().limit(limit).skip(limit * page).sort({date: -1}).exec(function (err, articles) {
+		article.find().limit(limit).skip(skipNr).sort({date: -1}).exec(function (err, articles) {
+			article.find().limit(1).sort({date: -1}).populate('author').exec(function(err, latest) {
 				if (err) {
 					return res.render('500');
 				} else {
@@ -30,10 +32,13 @@ module.exports = function (passport) {
 						res.render('index', {
 							articles: articles,
 							page: page + 1,
-							pages: Math.ceil(count / limit)
+							pages: Math.ceil(count / limit),
+							featured: latest,
+							user: req.user
 						});
 					});
 				}
+			});
 		});
 
 		// Pagination helper
