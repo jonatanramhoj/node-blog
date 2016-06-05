@@ -19,31 +19,24 @@ module.exports = function (grunt) {
 			dist: {
 				files: [{
 					dest: './public/dist/css/all.min.css',
-					src: './public/css/main.css'
+					src: './public/main.css'
 				}]
 			}
 		},
-		// uglify: {
-		// 	dist: {
-		// 		files: {
-		// 			'./public/dist/js/all.min.js': ['./public/js/*.js']
-		// 		}
-		// 	}
-		// },
-		concat: {
+		uglify: {
 			dist: {
-				src: [
-					'./public/js/jquery-2.2.0.js',
-					// './public/js/vendor/tinymce/tinymce.js',
-					'./public/js/vendor/prism/prism.js',
-					'./public/js/main.js'
-				],
-				dest: './public/dist/js/all.min.js'
+				files: {
+					'./public/dist/js/all.min.js': [
+						'./public/js/vendor/jquery-2.2.0.js',
+						'./public/js/vendor/prism/prism.js',
+						'./public/js/main.js'
+					]
+				}
 			}
 		}
 	});
 
 	// Register tasks
-	grunt.registerTask('default', ['postcss', 'concat']);
+	grunt.registerTask('default', ['postcss', 'uglify']);
 };
 
