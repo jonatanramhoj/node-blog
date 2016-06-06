@@ -42,7 +42,8 @@ module.exports = function (passport) {
 			});
 		});
 
-		// Pagination helper TODO: Put this helper in app.js (needs access to req object)
+		// Pagination helper
+		// TODO: Put this helper in app.js (needs access to req object)
 		hbs.registerHelper('pagination', function (pages, page) {
 			var url = require('url');
 			var qs = require('qs');
@@ -53,8 +54,8 @@ module.exports = function (passport) {
 
 			for (var p = 1; p < pages + 1; p++) {
 				params.page = p;
-				activeClass = page == p ? 'c-pagination__link--active' : '';
-				defaultClass = 'c-pagination__link';
+				var activeClass = page == p ? 'c-pagination__link--active' : '';
+				var defaultClass = 'c-pagination__link';
 				str += '<li class="c-pagination__item"><a class="' + defaultClass + ' ' + activeClass + '" href="?' + qs.stringify(params) + '">' + p + '</a></li>';
 			}
 
