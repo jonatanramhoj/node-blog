@@ -17,9 +17,9 @@ function toggleNav () {
 	var scrollTop = $(window).scrollTop();
 
 	if (scrollTop >= heroHeight) {
-		$('.c-nav').addClass('c-nav--active');
+		$('.c-nav--sticky').addClass('c-nav--active');
 	} else {
-		$('.c-nav').removeClass('c-nav--active');
+		$('.c-nav--sticky').removeClass('c-nav--active');
 	}
 };
 
@@ -61,7 +61,7 @@ function fadeOutText () {
 	var didScroll;
 	var lastScrollTop = 0;
 	var delta = 5;
-	var navbarHeight = $('.c-nav').outerHeight();
+	var navbarHeight = $('.c-nav--sticky').outerHeight();
 
 	$(window).scroll(function (event) {
 		didScroll = true;
@@ -85,11 +85,11 @@ function fadeOutText () {
 		// This is necessary so you never see what is "behind" the navbar.
 		if (st > lastScrollTop && st > navbarHeight) {
 			// Scroll Down
-			$('.c-nav').addClass('c-nav--hide');
+			$('.c-nav--sticky').addClass('c-nav--hide');
 		}
 		else if (st + $(window).height() < $(document).height()) {
 			// Scroll Up
-			$('.c-nav').removeClass('c-nav--hide');
+			$('.c-nav--sticky').removeClass('c-nav--hide');
 		}
 
 		lastScrollTop = st;

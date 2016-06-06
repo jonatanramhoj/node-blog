@@ -1,27 +1,29 @@
-{{>nav}}
+{{>nav modifier="c-nav--dark"}}
 
 <div role="main">
-	<div class="o-width-limiter o-width-limiter--small">
-		<form class="c-form c-form--small" action="/login" method="post">
-			<legend class="c-form__heading">Sign in</legend>
-			<fieldset class="c-form__item">
-				<label class="c-form__label" for="username">Username</label>
-				<input class="c-form__input" type="text" name="username" id="username" placeholder="mr Smith" required autofocus>
-			</fieldset>
-			<fieldset class="c-form__item">
-				<label class="c-form__label" for="password">Password</label>
-				<input class="c-form__input" type="password" name="password" id="password" placeholder="somethingsecret" required>
-			</fieldset>
-			<button class="c-btn c-btn--large c-form__submit-btn" type="submit" name="button">Sign in</button>
-			<div class="t-text-align-center">
-				<span class="c-form__or">Or</span>
-				<a href="/signup" class="c-form__register-link">Create an account</a>
-			</div>
-			{{#if message}}
-				<span class="t-error">{{message}}</span>
-			{{/if}}
-		</form>
-	</div>
+	<section class="c-section c-section--limited">
+		<div class="o-width-limiter o-width-limiter--small">
+			<form class="c-form c-form--small" action="/login" method="post">
+				<legend class="c-form__heading">Sign in</legend>
+				<fieldset class="c-form__item">
+					<label class="c-form__label" for="username">Username</label>
+					<input class="c-form__input" type="text" name="username" id="username" placeholder="mr Smith" required autofocus>
+				</fieldset>
+				<fieldset class="c-form__item">
+					<label class="c-form__label" for="password">Password</label>
+					<input class="c-form__input" type="password" name="password" id="password" placeholder="somethingsecret" required>
+				</fieldset>
+				<button class="c-btn c-btn--large c-form__submit-btn" type="submit" name="button">Sign in</button>
+				<div class="t-text-align-center">
+					<span class="c-form__or">Or</span>
+					<a href="/signup" class="c-form__register-link">Create an account</a>
+				</div>
+				{{#if message}}
+					<span class="t-error">{{message}}</span>
+				{{/if}}
+			</form>
+		</div>
+	</section>
 </div>
 
 {{>footer}}

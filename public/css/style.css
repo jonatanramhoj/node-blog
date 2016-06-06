@@ -170,7 +170,7 @@ strong {
 	#NAV
 ----------------------------------------------------------*/
 .c-nav {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	display: flex;
@@ -182,20 +182,16 @@ strong {
 	transition: all 0.6s ease;
 }
 
+.c-nav--sticky {
+	position: fixed;
+}
+
 .c-nav--active {
 	background: rgba(255,255,255,0.95);
 }
 
 .c-nav--hide {
 	top: -52px;
-}
-
-.c-nav--new {
-	position: absolute;
-}
-
-.c-nav--new .c-nav--active {
-	background: none;
 }
 
 .c-nav__list {
@@ -233,6 +229,11 @@ strong {
 	transition: all .2s ease-in-out;
 }
 
+.c-nav--dark .c-nav__link,
+.c-nav--dark .c-nav__link:visited {
+	color: #222;
+}
+
 .c-nav__link:hover {
 	border-color: #fff;
 }
@@ -241,6 +242,7 @@ strong {
 	color: #222;
 }
 
+.c-nav--dark .c-nav__link:hover,
 .c-nav--active .c-nav__link:hover,
 .c-nav__link--active {
 	border-color: #222;
@@ -266,6 +268,10 @@ strong {
 	.c-section {
 		padding: 80px 0;
 	}
+}
+
+.c-section--limited {
+	padding: 80px 0;
 }
 
 .c-section--confined {
@@ -646,12 +652,11 @@ strong {
 	#Pagination
 ----------------------------------------------------------*/
 .c-pagination {
-	display: flex;
-	justify-content: center;
 	text-align: center;
 }
 
 .c-pagination__item {
+	display: inline-block;
 	margin-right: 10px;
 }
 
@@ -686,7 +691,7 @@ strong {
 	#Forms
 ----------------------------------------------------------*/
 .c-form {
-	margin: 160px auto 0;
+	margin: 0 auto;
 }
 
 .c-form--small {
@@ -750,6 +755,12 @@ strong {
 	margin-bottom: 20px;
 }
 
+.c-form__login-link {
+	margin-left: 20px;
+}
+
+.c-form__login-link,
+.c-form__login-link:visited,
 .c-form__register-link,
 .c-form__register-link:visited {
 	color: #444;
@@ -757,6 +768,7 @@ strong {
 	transition: all 0.2s ease;
 }
 
+.c-form__login-link:hover,
 .c-form__register-link:hover {
 	border-color: transparent;
 }
