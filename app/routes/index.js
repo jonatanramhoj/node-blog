@@ -42,7 +42,7 @@ module.exports = function (passport) {
 			});
 		});
 
-		// Pagination helper
+		// Pagination helper TODO: Put this helper in app.js (needs access to req object)
 		hbs.registerHelper('pagination', function (pages, page) {
 			var url = require('url');
 			var qs = require('qs');
@@ -61,13 +61,6 @@ module.exports = function (passport) {
 			return str;
 		});
 
-		// Check if total articles are more than our page limit
-		hbs.registerHelper('ifCond', function (v1, v2, options) {
-			if (v1 > v2) {
-				return options.fn(this);
-			}
-			return options.inverse(this);
-		});
 	});
 
 	/* GET login page */

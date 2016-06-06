@@ -30,6 +30,14 @@ hbs.registerHelper('formatDate', function(date, format) {
 	return date;
 });
 
+// Check if a value is greater than something
+hbs.registerHelper('ifCond', function (v1, v2, options) {
+	if (v1 > v2) {
+		return options.fn(this);
+	}
+	return options.inverse(this);
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, '/app/views'));
 app.set('view engine', 'hbs');
