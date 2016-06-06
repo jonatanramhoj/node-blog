@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var article = mongoose.model('article');
-var paginate = require('express-paginate');
 var hbs = require('hbs');
 
 var isAuthenticated = function (req, res, next) {
