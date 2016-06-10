@@ -953,3 +953,22 @@ strong {
 	word-wrap: break-word;
 	white-space: pre-wrap;
 }
+
+/*----------------------------------------------------------
+	#ERRORS
+----------------------------------------------------------*/
+.c-error-msg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 54px;
+	font-weight: 700;
+	text-align: center;
+}
+
+@media(max-width: 600px) {
+	.c-error-msg {
+		font-size: 40px;
+	}
+}

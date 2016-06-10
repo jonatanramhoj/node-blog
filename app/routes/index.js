@@ -77,18 +77,6 @@ module.exports = function (passport) {
 		failureFlash: true
 	}));
 
-	// GET Registration page
-	router.get('/signup', function (req, res) {
-		res.render('register', {message: req.flash('message')});
-	});
-
-	// Handle Registration POST
-	router.post('/signup', passport.authenticate('signup', {
-		successRedirect: '/',
-		failureRedirect: '/login',
-		failureFlash: true
-	}));
-
 	// Handle logout
 	router.get('/signout', function (req, res) {
 		req.logout();
