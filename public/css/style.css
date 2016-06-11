@@ -957,18 +957,22 @@ strong {
 /*----------------------------------------------------------
 	#ERRORS
 ----------------------------------------------------------*/
-.c-error-msg {
+.c-error {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 54px;
-	font-weight: 700;
 	text-align: center;
+	word-wrap: break-word;
+}
+
+.c-error__msg {
+	font-size: 48px;
+	font-weight: 700;
 }
 
 @media(max-width: 600px) {
-	.c-error-msg {
-		font-size: 40px;
+	.c-error__msg {
+		font-size: 32px;
 	}
 }
