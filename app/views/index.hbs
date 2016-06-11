@@ -1,8 +1,8 @@
 {{>nav modifier="c-nav--sticky"}}
 
-{{#each featured}}
 <section id="hero" class="c-hero o-fixed-bg" role="banner" {{#if image}}style="background-image:url({{image}})"{{/if}}>
 	<div class="c-hero__inner js-fade-hero-content">
+		{{#each featured}}
 		{{#if ../user}}
 			<div class="c-edit">
 				<a href="/article/edit/{{_id}}" class="c-edit__link c-edit__link--light">Edit</a>
@@ -16,11 +16,11 @@
 			{{#if tags}}<span class="c-hero__tag">{{tags}}</span>{{/if}}
 		</span>
 		<a href="article/{{_id}}" class="c-btn c-btn--secondary">Read article</a>
+		{{/each}}
 	</div>
 	<a href="#posts" class="c-hero__arrow c-hero__arrow--active js-go-to-section js-fade-hero-content" role="button"><span class="lnr-chevron-down" aria-hidden="true"></span></a>
 	<aside class="c-hero__overlay"></aside>
 </section>
-{{/each}}
 
 <div role="main">
 	<section id="posts" class="c-teasers">
