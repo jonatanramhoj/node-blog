@@ -21,6 +21,12 @@ var index = require('./app/routes/index')(passport);
 // Setup express instance
 var app = express();
 
+app.set('port', (process.env.PORT || 5000));
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
 // Register hbs partials
 hbs.registerPartials(__dirname + '/app/views/partials');
 
