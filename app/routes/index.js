@@ -83,6 +83,18 @@ module.exports = function (passport) {
 		res.redirect('/');
 	});
 
+	// GET Registration page
+	router.get('/signup', function (req, res) {
+		res.render('register', {message: req.flash('message')});
+	});
+
+	// Handle Registration POST
+	router.post('/signup', passport.authenticate('signup', {
+		successRedirect: '/',
+		failureRedirect: '/login',
+		failureFlash: true
+	}));
+
 	return router;
 }
 
