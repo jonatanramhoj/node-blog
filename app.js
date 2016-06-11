@@ -11,8 +11,11 @@ var moment = require('moment');
 var passport = require('passport');
 var expressSession = require('express-session');
 
-// Connect to DB
-mongoose.connect('mongodb://localhost/blogDB');
+// Connect to local DB
+// mongoose.connect('mongodb://localhost/blogDB');
+
+// Connect to server DB
+mongoose.connect('mongodb://heroku_gsmt362k:3t29kmt46btfpqu21b9sj8e2ja@ds013014.mlab.com:13014/heroku_gsmt362k');
 
 // Include routes
 var article = require('./app/routes/article')(passport);
