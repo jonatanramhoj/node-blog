@@ -2,6 +2,12 @@
 
 <section id="hero" class="c-hero c-hero--blog-post o-fixed-bg" role="banner" {{#if single.image}}style="background-image:url({{single.image}})"{{/if}}>
 	<div class="c-hero__inner js-fade-hero-content">
+		{{#if user}}
+			<div class="c-edit">
+				<a href="/article/edit/{{single.id}}" class="c-edit__link c-edit__link--light">Edit</a>
+				<a href="/article/{{single.id}}" class="c-edit__link c-edit__link--delete c-edit__link--light">Delete</a>
+			</div>
+		{{/if}}
 		<h1 class="c-hero__heading">{{single.title}}</h1>
 		<span class="c-hero__subheading">
 			<span class="c-hero__tag">{{formatDate single.date 'DD MMMM YYYY'}}</span>

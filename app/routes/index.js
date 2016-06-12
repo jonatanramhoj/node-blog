@@ -29,6 +29,7 @@ module.exports = function (passport) {
 				} else {
 					article.count().exec(function (err, count) {
 						res.render('index', {
+							title: 'jonatanramhoj.co',
 							featured: latest, // Latest
 							articles: articles, // List
 							page: page + 1,

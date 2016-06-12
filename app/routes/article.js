@@ -26,19 +26,16 @@ module.exports = function (passport) {
 
 	/* POST new article */
 	router.post('/new', function (req, res) {
-		console.log('req.body:', req.body);
 		var newArticle = new article(req.body);
 
 		newArticle.save(function (err) {
 			if (err) {
 				console.log('err:', err);
 			} else {
-				// console.log('saved:', data);
-				// TODO prompt user to confirm article before redirect to start
+				// Redirect to start page
 				res.redirect('/');
 			}
 		});
-		// res.sendStatus(200);
 	});
 
 	/* GET single article page */
@@ -72,11 +69,10 @@ module.exports = function (passport) {
 		// Find article by id and update model
 		article.update({_id: id}, {$set: req.body}, function (err) {
 			if (err) {
-				console.log('err:', err);
 				res.sendStatus(304);
 			} else {
-				// res.sendStatus(200);
-				res.redirect('/');
+				// Redirect to article page
+				res.redirect('/article/' + id);
 			}
 		});
 	});
@@ -87,11 +83,9 @@ module.exports = function (passport) {
 
 		article.remove({_id: id}, function (err) {
 			if (err) {
-				console.log('err:', err);
 				res.sendStatus(304);
 			} else {
 				res.sendStatus(200);
-				console.log('success');
 			}
 		});
 	});
