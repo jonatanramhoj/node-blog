@@ -54,10 +54,6 @@ pre[class*="language-"] {
 	overflow: auto;
 }
 
-pre[class*="language-"]:last-of-type {
-	margin-bottom: 0;
-}
-
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #f5f2f0;
