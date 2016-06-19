@@ -46,7 +46,8 @@ module.exports = function (passport) {
 			res.render('article', {
 				title: single.title,
 				single: single,
-				user: req.user
+				user: req.user,
+				url: req.originalUrl
 			});
 		});
 	});

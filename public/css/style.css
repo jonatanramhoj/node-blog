@@ -921,3 +921,39 @@ strong {
 		font-size: 32px;
 	}
 }
+
+/*----------------------------------------------------------
+	#SHARE
+----------------------------------------------------------*/
+.c-share {
+	margin-top: 80px;
+}
+
+.c-share__list {
+	text-align: center;
+}
+
+.c-share__item {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.c-share__item:last-child {
+	margin-right: 0;
+}
+
+.c-share__link {
+	display: block;
+}
+
+.c-share__link:hover .c-share__icon {
+	opacity: 0.8;
+}
+
+.c-share__icon {
+	width: 20px;
+	height: 20px;
+	color: #444;
+	opacity: 0.3;
+	transition: opacity 0.2s ease;
+}

@@ -25,12 +25,40 @@
 			<article class="c-article s-text">
 				{{{single.body}}}
 			</article>
+			<!-- <a href="#" class="c-share-trigger" role="button">Share this article</a> -->
+			<div class="c-share t-cf">
+				<ul class="c-share__list">
+					<li class="c-share__item">
+						<!-- Facebook -->
+						<a class="c-share__link" href="http://www.facebook.com/sharer.php?u=http://www.jonatanramhoj.co/{{url}}" target="_blank">
+							<img class="c-share__icon" src="../../../img/facebook-logo.svg" alt="">
+						</a>
+					</li>
+					<li class="c-share__item">
+						<!-- Twitter -->
+						<a class="c-share__link" href="https://twitter.com/share?url=http://www.jonatanramhoj.co/{{url}}/&amp;text={{single.title}}&amp;hashtags=jonatanramhoj.co" target="_blank">
+							<img class="c-share__icon" src="../../../img/twitter-black-shape.svg" alt="">
+						</a>
+					</li>
+					<li class="c-share__item">
+						<!-- Google+ -->
+						<a class="c-share__link" href="https://plus.google.com/share?url=http://www.jonatanramhoj.co/{{url}}/" target="_blank">
+							<img class="c-share__icon" src="../../../img/google-plus-symbol.svg" alt="">
+						</a>
+					</li>
+					<li class="c-share__item">
+						<!-- Email -->
+						<a class="c-share__link c-share__link--email" href="mailto:?Subject={{single.title}}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://www.jonatanramhoj.co/{{url}}/">
+							<img class="c-share__icon" src="../../../img/envelope.svg" alt="">
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</section>
-</div>
-
-<div class="c-pagination">
-	<a href="/" class="c-btn c-btn--light">More articles</a>
+	<div class="c-pagination">
+		<a href="/" class="c-btn c-btn--light">More articles</a>
+	</div>
 </div>
 
 {{>footer}}
