@@ -127,7 +127,7 @@ $('body').on('click', '.c-edit__link--delete', function (e) {
 tinymce.init({
 	selector: '.c-form__wysiwyg',
 	content_css: '/js/vendor/tinymce/skins/custom/custom-theme.css',
-	plugins: 'codesample, fullscreen',
+	plugins: 'codesample, fullscreen, paste',
 	toolbar: 'codesample, fullscreen'
 });
 
@@ -138,3 +138,4 @@ $('p').each(function() {
 		$this.remove();
 	}
 });
+
