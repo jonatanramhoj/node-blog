@@ -14,12 +14,7 @@
 	<meta property="og:image" content="">
 	<link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
-	<!-- <link rel='stylesheet' href='/css/fonts.css' />
-	<link rel='stylesheet' href='/css/reset.css' />
-	<link rel='stylesheet' href='/css/style.css' /> -->
-	<!-- <link rel='stylesheet' href='/js/vendor/prism/prism.css' /> -->
-	<link rel='stylesheet' href='/main.css' />
-	<!-- <link rel='stylesheet' href='/dist/css/all.min.css' /> -->
+	<link rel='stylesheet' href='/dist/css/all.min.css' />
 	<script>document.getElementsByTagName('html')[0].className += ' js';</script>
 	<!--[if lt IE 9]>
 		<script type="text/javascript">
@@ -30,10 +25,7 @@
 <body>
 {{{body}}}
 <aside class="c-loading-screen"></aside>
-<script src="/js/vendor/jquery-2.2.0.js"></script>
-<script src="/js/vendor/prism/prism.js"></script>
-<script src="/js/vendor/tinymce/tinymce.js"></script>
-<script src="/js/main.js"></script>
-<!-- <script src="/dist/js/all.min.js"></script> -->
+{{#if user}}<script src="/js/vendor/tinymce/tinymce.js"></script>{{/if}}
+<script src="/dist/js/all.min.js"></script>
 </body>
 </html>

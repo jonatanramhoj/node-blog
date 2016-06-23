@@ -20,12 +20,14 @@
 </section>
 
 <div role="main">
-	<section id="article" class="c-section">
+	<section id="article" class="c-article c-section">
 		<div class="o-width-limiter o-width-limiter--small">
-			<article class="c-article s-text">
+			<article class="s-text">
 				{{{single.body}}}
 			</article>
-			{{>socialSharing}}
+			<div class="c-article__footer">
+				{{>socialSharing}}
+			</div>
 		</div>
 	</section>
 	<div class="c-pagination">
