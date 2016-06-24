@@ -23,7 +23,7 @@ module.exports = function (passport) {
 		var skipNr = page === 0 ? 1 : limit * page; // Omit featured article from list
 
 		article.find().limit(limit).skip(skipNr).sort({date: -1}).exec(function (err, articles) {
-			article.find().limit(1).sort({date: -1}).populate('author').exec(function(err, latest) {
+			article.findOne().sort({date: -1}).populate('author').exec(function(err, latest) {
 				if (err) {
 					return res.render('500');
 				} else {

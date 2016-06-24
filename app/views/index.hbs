@@ -1,22 +1,20 @@
 {{>nav modifier="c-nav--sticky"}}
 
-<section id="hero" class="c-hero o-fixed-bg" role="banner" {{#if image}}style="background-image:url({{image}})"{{/if}}>
+<section id="hero" class="c-hero o-fixed-bg" role="banner" {{#if featured.image}}style="background-image:url({{featured.image}})"{{/if}}>
 	<div class="c-hero__inner js-fade-hero-content">
-		{{#each featured}}
 		{{#if ../user}}
 			<div class="c-edit">
 				<a href="/article/edit/{{_id}}" class="c-edit__link c-edit__link--light">Edit</a>
 				<a href="/article/{{_id}}" class="c-edit__link c-edit__link--delete c-edit__link--light">Delete</a>
 			</div>
 		{{/if}}
-		<h1 class="c-hero__heading">{{title}}</h1>
+		<h1 class="c-hero__heading">{{featured.title}}</h1>
 		<span class="c-hero__subheading">
-			<span class="c-hero__tag">{{formatDate date 'DD MMMM YYYY'}}</span>
-			<span class="c-hero__tag">By {{author.username}}</span>
-			{{#if tags}}<span class="c-hero__tag">{{tags}}</span>{{/if}}
+			<span class="c-hero__tag">{{formatDate featured.date 'DD MMMM YYYY'}}</span>
+			<span class="c-hero__tag">By {{featured.author.username}}</span>
+			{{#if tags}}<span class="c-hero__tag">{{featured.tags}}</span>{{/if}}
 		</span>
 		<a href="article/{{_id}}" class="c-btn c-btn--secondary">Read article</a>
-		{{/each}}
 	</div>
 	<a href="#posts" class="c-hero__arrow c-hero__arrow--active js-go-to-section js-fade-hero-content" role="button"><span class="lnr-chevron-down" aria-hidden="true"></span></a>
 	<aside class="c-hero__overlay"></aside>

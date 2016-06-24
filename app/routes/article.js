@@ -42,10 +42,10 @@ module.exports = function (passport) {
 	router.get('/:id', function(req, res, next) {
 		var id = req.params.id;
 
-		article.findOne(id).populate('author').exec(function (err, single) {
-			console.log('single:', single.title);
+		article.findById(id).populate('author').exec(function (err, single) {
+			console.log('id:', id);
 			res.render('article', {
-				title: single.title,
+				title: 'test',
 				single: single,
 				user: req.user,
 				url: req.originalUrl
