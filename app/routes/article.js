@@ -42,7 +42,8 @@ module.exports = function (passport) {
 	router.get('/:id', function(req, res, next) {
 		var id = req.params.id;
 
-		article.findById(id).populate('author').exec(function (err, single) {
+		article.findOne(id).populate('author').exec(function (err, single) {
+			console.log('single:', single.title);
 			res.render('article', {
 				title: single.title,
 				single: single,

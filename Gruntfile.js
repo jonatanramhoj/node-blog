@@ -3,6 +3,7 @@ module.exports = function (grunt) {
 	// Include grunt plugins
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Project config
 	grunt.initConfig({
@@ -32,10 +33,18 @@ module.exports = function (grunt) {
 					]
 				}
 			}
+		},
+		watch: {
+			css: {
+				files: ['./public/**/*.css', '!./public/dist/**/*.css'],
+				tasks: ['css']
+			}
 		}
 	});
 
 	// Register tasks
-	grunt.registerTask('default', ['postcss', 'uglify']);
+	grunt.registerTask('css', ['postcss']);
+	grunt.registerTask('js', ['uglify']);
+	grunt.registerTask('default', ['css', 'js']);
 };
 
