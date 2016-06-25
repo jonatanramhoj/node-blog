@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	// Project config
 	grunt.initConfig({
@@ -12,15 +13,15 @@ module.exports = function (grunt) {
 				map: true, // Inline sourcemaps
 				processors: [
 					require('postcss-import')(), // Import all stylesheets to one file
-					require('autoprefixer')({browsers: 'last 2 versions'}), // Add vendor prefixes
-					require('cssnano')() // Minify the result
+					require('postcss-cssnext')({browsers: 'last 2 versions'}) // Use future css today
 				]
-			},
-			dist: {
-				files: [{
-					dest: './public/dist/css/all.min.css',
-					src: './public/main.css'
-				}]
+			}
+		},
+		cssmin: {
+			target: {
+				files: {
+					'./public/dist/css/all.min.css': ['./public/main.css']
+				}
 			}
 		},
 		uglify: {
@@ -43,7 +44,7 @@ module.exports = function (grunt) {
 	});
 
 	// Register tasks
-	grunt.registerTask('css', ['postcss']);
+	grunt.registerTask('css', ['postcss', 'cssmin']);
 	grunt.registerTask('js', ['uglify']);
 	grunt.registerTask('default', ['css', 'js']);
 };
