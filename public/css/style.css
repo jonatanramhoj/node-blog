@@ -150,6 +150,7 @@ strong {
 	transform: translate(-50%, -50%);
 	width: 90%;
 	text-align: center;
+	word-wrap: break-word;
 	z-index: 2;
 }
 
@@ -743,6 +744,7 @@ strong {
 .c-form__submit-btn {
 	display: block;
 	margin: 0 auto;
+	margin-bottom: 20px;
 }
 
 .c-form__login-link {
@@ -990,6 +992,13 @@ strong {
 
 .t-background-dark {
 	background: #222;
+}
+
+.t-error {
+	color: #FF2D55;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
 }
 
 /*----------------------------------------------------------
