@@ -1,25 +1,15 @@
-{{>nav modifier="c-nav--dark"}}
-
 <div role="main">
-	<section class="c-section c-section--limited">
-		<div class="o-width-limiter o-width-limiter--small">
-			<form class="c-form c-form--small" action="/login" method="post">
-				<h1 class="c-form__heading">Log in</h1>
-				<div class="c-form__item">
-					<label class="c-form__label" for="username">Username</label>
-					<input class="c-form__input" type="text" name="username" id="username" placeholder="Darth Vader" required autofocus>
-				</div>
-				<div class="c-form__item">
-					<label class="c-form__label" for="password">Password</label>
-					<input class="c-form__input" type="password" name="password" id="password" placeholder="XXXXXX" required>
-				</div>
-				<button class="c-btn c-btn--large c-form__submit-btn" type="submit" name="button">Log in</button>
-				{{#if message}}
-					<span class="t-error">{{message}}</span>
-				{{/if}}
-			</form>
+	<form class="c-form c-form--small c-form--login" action="/login" method="post">
+		<h1 class="c-form__heading">Log in</h1>
+		<div class="c-form__item">
+			<input class="c-form__input c-form__input--simple" type="text" name="username" id="username" placeholder="Username" required autofocus>
 		</div>
-	</section>
+		<div class="c-form__item">
+			<input class="c-form__input c-form__input--simple" type="password" name="password" id="password" placeholder="Password" required>
+		</div>
+		<button class="c-btn c-btn--login c-form__submit-btn" type="submit" name="button">Log in</button>
+		{{#if message}}
+		<span class="t-error">{{message}}</span>
+		{{/if}}
+	</form>
 </div>
-
-{{>footer}}

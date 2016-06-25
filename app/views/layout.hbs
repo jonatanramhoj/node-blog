@@ -30,7 +30,7 @@
 	ga('send', 'pageview');
 	</script>
 </head>
-<body>
+<body {{#if bodyClass}}class="{{bodyClass}}"{{/if}}>
 {{{body}}}
 <aside class="c-loading-screen"></aside>
 {{#if user}}<script src="/js/vendor/tinymce/tinymce.js"></script>{{/if}}

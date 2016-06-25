@@ -478,15 +478,17 @@ strong {
 	border-color: #cacaca;
 }
 
-.c-btn--contrast {
-	background: #FF5E3A;
+.c-btn--login {
 	color: #fff;
-	border: 0;
+	border-color: #fff;
+	font-size: 12px;
+	font-weight: 400;
+	border-color: #999;
 }
 
-.c-btn--contrast:hover {
-	color: #fff;
-	background: #FF916D;
+.c-btn--login:hover {
+	color: #999;
+	border-color: #fff;
 }
 
 /*----------------------------------------------------------
@@ -657,11 +659,21 @@ strong {
 }
 
 .c-form--small {
-	max-width: 300px;
+	max-width: 400px;
+	width: 100%;
 }
 
 .c-form--large {
 	max-width: 500px;
+	width: 100%;
+}
+
+.c-form--login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0 20px;
 }
 
 .c-form__item {
@@ -682,10 +694,23 @@ strong {
 	border-color: #cacaca; /* Same as tinymce */
 }
 
-.c-form__input--clean {
-	font-size: 18px;
+.c-form__input--simple {
+	padding-left: 0;
 	border: 0;
-	padding: 0;
+	border-radius: 0;
+	background: none;
+	color: #fff;
+	font-size: 16px;
+	border-bottom: 1px solid #3e3e3e;
+	transition: border 0.2s ease-in-out;
+}
+
+.c-form__input--simple:focus {
+	border-color: #fff;
+}
+
+.c-form__input--simple::placeholder {
+	color: #ccc;
 }
 
 .c-form__label {
@@ -708,13 +733,16 @@ strong {
 }
 
 .c-form__heading {
-	font-size: 48px;
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
 	text-align: center;
 	margin: 0 auto 48px;
 }
 
 .c-form__submit-btn {
-	margin-bottom: 20px;
+	display: block;
+	margin: 0 auto;
 }
 
 .c-form__login-link {
@@ -958,6 +986,10 @@ strong {
 
 .t-text-align-center {
 	text-align: center;
+}
+
+.t-background-dark {
+	background: #222;
 }
 
 /*----------------------------------------------------------

@@ -68,7 +68,10 @@ module.exports = function (passport) {
 	/* GET login page */
 	router.get('/login', function(req, res) {
 		// Display the Login page with any flash message, if any
-		res.render('login', {message: req.flash('message')});
+		res.render('login', {
+			message: req.flash('message'),
+			bodyClass: 't-background-dark'
+		});
 	});
 
 	// Handle login POST
