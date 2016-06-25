@@ -9,11 +9,13 @@
 			</div>
 		{{/if}}
 		<h1 class="c-hero__heading">{{single.title}}</h1>
-		<span class="c-hero__subheading">
-			<span class="c-hero__tag">{{formatDate single.date 'DD MMMM YYYY'}}</span>
-			<span class="c-hero__tag">By {{single.author.username}}</span>
-			{{#if single.tags}}<span class="c-hero__tag">{{single.tags}}</span>{{/if}}
-		</span>
+		<ul class="c-hero__meta">
+			<li class="c-hero__meta-item">{{formatDate single.date 'DD MMMM YYYY'}}</li>
+			<li class="c-hero__meta-item">By {{single.author.username}}</li>
+			{{#if single.tags}}
+			<li class="c-hero__meta-item">{{single.tags}}</li>
+			{{/if}}
+		</ul>
 	</div>
 	<a href="#article" class="c-hero__arrow c-hero__arrow--active js-go-to-section js-fade-hero-content"><span class="lnr-chevron-down" aria-hidden="true"></span></a>
 	<aside class="c-hero__overlay"></aside>
