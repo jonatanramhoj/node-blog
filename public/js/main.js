@@ -145,3 +145,17 @@ $('p').each(function() {
 	}
 });
 
+// Close info-bar
+$('body').on('click', '.c-info-bar__close', function () {
+	var $nav = $('.c-nav');
+	$(this).closest('.c-info-bar').slideUp(200);
+	if (!$nav.hasClass('c-nav--sticky')) {
+		$nav.addClass('c-nav--sticky');
+	}
+});
+
+$(function () {
+	if ($('.c-info-bar').length) {
+		$('.c-nav').removeClass('c-nav--sticky');
+	}
+});

@@ -109,7 +109,12 @@ strong {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-color: #222;
-	transition: height 999999s ease; /* Prevent jumpy behavior on mobile when using full page background */
+}
+
+@media(--mobile) {
+	.c-hero {
+		transition: height 999999s ease; /* Prevent jumpy behavior on mobile when using full page background */
+	}
 }
 
 .c-hero--small {
@@ -237,7 +242,6 @@ strong {
 ----------------------------------------------------------*/
 .c-nav {
 	position: absolute;
-	top: 0;
 	left: 0;
 	display: flex;
 	justify-content: space-between;
@@ -250,6 +254,7 @@ strong {
 
 .c-nav--sticky {
 	position: fixed;
+	top: 0;
 	-webkit-transform: translateZ(0);
 }
 
@@ -259,6 +264,10 @@ strong {
 
 .c-nav--hide {
 	top: -52px;
+}
+
+.c-nav--push-down {
+	top: 50px;
 }
 
 .c-nav__list {
@@ -419,7 +428,7 @@ strong {
 }
 
 /*----------------------------------------------------------
-	#BUTTON || http://codepen.io/terkel/pen/dvejH
+	#BUTTON
 ----------------------------------------------------------*/
 .c-btn {
 	color: #999;
@@ -428,7 +437,7 @@ strong {
 	font-size: 14px;
 	vertical-align: middle;
 	border: 1px solid #999;
-	border-radius: 2px;
+	border-radius: 6px;
 	padding: 15px 25px;
 	text-decoration: none;
 	font-weight: 700;
@@ -847,6 +856,36 @@ strong {
 	color: #444;
 	opacity: 0.3;
 	transition: opacity 0.2s ease;
+}
+
+/*----------------------------------------------------------
+	#INFO BAR
+----------------------------------------------------------*/
+.c-info-bar {
+	position: relative;
+	height: 50px;
+	background: #FF2A68;
+	color: #fff;
+	box-shadow: inset 0 -5px 5px -5px rgba(0,0,0,0.7);
+}
+
+.c-info-bar__msg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0 20px;
+}
+
+.c-info-bar__close {
+	vertical-align: middle;
+	font-weight: 700;
+	margin-left: 20px;
+	transition: all 0.2s ease-in-out;
+}
+
+.c-info-bar__close:hover {
+	transform: scale(1.3);
 }
 
 /*----------------------------------------------------------
