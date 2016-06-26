@@ -108,13 +108,8 @@ strong {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-color: #222;
 	transition: height 999999s ease; /* Prevent jumpy behavior on mobile when using full page background */
-}
-
-@media(--mobile) {
-	.c-hero {
-		height: 100vh;
-	}
 }
 
 .c-hero--small {
