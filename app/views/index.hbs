@@ -1,11 +1,11 @@
 {{>nav modifier="c-nav--sticky"}}
 
-<section id="hero" class="c-hero o-fixed-bg" role="banner" {{#if featured.image}}style="background-image:url({{featured.image}})"{{/if}}>
+<section id="hero" class="c-hero" role="banner" {{#if featured.image}}style="background-image:url({{featured.image}})"{{/if}}>
 	<div class="c-hero__inner js-fade-hero-content">
 		{{#if user}}
 		<div class="c-edit">
-			<a href="/article/edit/{{_id}}" class="c-edit__link c-edit__link--light">Edit</a>
-			<a href="/article/{{_id}}" class="c-edit__link c-edit__link--delete c-edit__link--light">Delete</a>
+			<a href="/article/edit/{{featured._id}}" class="c-edit__link c-edit__link--light">Edit</a>
+			<a href="/article/{{featured._id}}" class="c-edit__link c-edit__link--delete c-edit__link--light">Delete</a>
 		</div>
 		{{/if}}
 		<h1 class="c-hero__heading">{{featured.title}}</h1>

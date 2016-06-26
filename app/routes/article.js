@@ -20,7 +20,8 @@ module.exports = function (passport) {
 	router.get('/new', isAuthenticated, function (req, res) {
 		res.render('new', {
 			title: 'New article',
-			user: req.user
+			user: req.user,
+			newArticle: true
 		});
 	});
 

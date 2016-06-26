@@ -4,6 +4,19 @@ $(window)
 	.on('scroll', fadeOutHero)
 	.on('scroll', fadeOutText);
 
+if (window.matchMedia('(max-width: 600px)').matches) {
+	$(window)
+		.on('load', resizeBackground)
+		.on('resize', resizeBackground);
+}
+
+// Prevent jumpy behavior on mobile when using full page background
+function resizeBackground () {
+	$('.c-hero').css({
+		'height': $(window).height()
+	});
+};
+
 // Wait until image is loaded
 function fadeInContent () {
 	$('.c-loading-screen').fadeOut(600, function () {
