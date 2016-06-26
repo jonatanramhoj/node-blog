@@ -145,14 +145,21 @@ $('p').each(function() {
 	}
 });
 
-// Close info-bar
-$('body').on('click', '.c-info-bar__close', function () {
-	var $nav = $('.c-nav');
-	$(this).closest('.c-info-bar').slideUp(200);
-	if (!$nav.hasClass('c-nav--sticky')) {
-		$nav.addClass('c-nav--sticky');
-	}
-});
+// If no cookie
+if (!Cookies.get('info')) {
+	$('.c-info-bar').show();
+	$('body').on('click', '.c-info-bar__close', function () {
+		var $nav = $('.c-nav');
+		$(this).closest('.c-info-bar').slideUp(200);
+		if (!$nav.hasClass('c-nav--sticky')) {
+			$nav.addClass('c-nav--sticky');
+		}
+		// Set cookie for 24 hours
+		var date = new Date();
+		date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+		Cookies.set('info', true, {expires: date});
+	});
+}
 
 $(function () {
 	if ($('.c-info-bar').length) {

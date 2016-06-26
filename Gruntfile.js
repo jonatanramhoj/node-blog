@@ -29,6 +29,7 @@ module.exports = function (grunt) {
 					'./public/dist/js/all.min.js': [
 						'./public/js/vendor/jquery-2.2.0.js',
 						'./public/js/vendor/prism/prism.js',
+						'./public/js/vendor/js.cookie.js',
 						'./public/js/main.js'
 					]
 				}
