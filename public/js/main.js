@@ -125,7 +125,8 @@ $('body').on('click', '.c-edit__link--delete', function (e) {
 
 // Do stuff on page load
 $(function () {
-	// Initialize TinyMCE
+
+	// Initialize TinyMCE if logged in
 	var script = $('script[src="/js/vendor/tinymce/tinymce.js"]');
 
 	if (script.length) {
@@ -145,12 +146,7 @@ $(function () {
 		}
 	});
 
-	// Set nav position property
-	if ($('.c-info-bar').is(':visible')) {
-		$('.c-nav').removeClass('c-nav--sticky');
-	}
-
-	// If no cookie
+	// Show infobar if no cookie is set
 	if (!Cookies.get('info')) {
 		$('.c-info-bar').show();
 		$('body').on('click', '.c-info-bar__close', function () {
@@ -165,4 +161,9 @@ $(function () {
 			Cookies.set('info', true, {expires: date});
 		});
 	}
+
+	if ($('.c-info-bar').is(':visible')) {
+		$('.c-nav').removeClass('c-nav--sticky');
+	}
+
 });
