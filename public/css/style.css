@@ -206,7 +206,6 @@ strong {
 
 .c-hero__meta {
 	font-size: 0;
-	margin-bottom: 90px;
 }
 
 .c-hero__meta-item {
@@ -235,6 +234,16 @@ strong {
 
 .c-hero__meta-item:last-child:after {
 	content: none;
+}
+
+.c-hero__article-link {
+	margin-top: 90px;
+}
+
+@media(--mobile) {
+	.c-hero__article-link {
+		margin-top: 45px;
+	}
 }
 
 /*----------------------------------------------------------
