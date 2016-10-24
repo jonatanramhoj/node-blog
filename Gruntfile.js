@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
 
 	// Project config
 	grunt.initConfig({
@@ -23,15 +24,13 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-		uglify: {
+		requirejs: {
 			dist: {
-				files: {
-					'./public/dist/js/all.min.js': [
-						'./public/js/vendor/jquery-2.2.0.js',
-						'./public/js/vendor/prism/prism.js',
-						'./public/js/vendor/js.cookie.js',
-						'./public/js/main.js'
-					]
+				options: {
+					baseUrl: './public/js',
+					mainConfigFile: './public/js/all.js',
+					name: 'all',
+					out: './public/dist/js/all.min.js'
 				}
 			}
 		},
@@ -45,7 +44,7 @@ module.exports = function (grunt) {
 
 	// Register tasks
 	grunt.registerTask('css', ['postcss']);
-	grunt.registerTask('js', ['uglify']);
+	grunt.registerTask('js', ['requirejs']);
 	grunt.registerTask('default', ['css', 'js']);
 };
 
