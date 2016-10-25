@@ -1,4 +1,4 @@
-define(['jquery', 'cookie', 'domReady'], function ($, Cookies, domReady) {
+define(['jquery', 'cookie'], function ($, Cookies) {
 	$(function () {
 		$(window)
 			.on('scroll', toggleNav)

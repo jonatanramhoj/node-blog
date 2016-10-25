@@ -4,8 +4,7 @@ requirejs.config({
 		'main': 'main',
 		'jquery': 'vendor/jquery-2.2.0',
 		'cookie': 'vendor/cookie',
-		'prism': 'vendor/prism/prism',
-		'domReady': 'vendor/domReady'
+		'prism': 'vendor/prism/prism'
 	}
 });
 
