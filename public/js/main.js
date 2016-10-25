@@ -1,14 +1,13 @@
-define(['jquery', 'cookie'], function ($, Cookies) {
+define(['jquery', 'cookie', 'domReady'], function ($, Cookies, domReady) {
 	$(function () {
 		$(window)
-			.on('load', fadeInContent)
 			.on('scroll', toggleNav)
 			.on('scroll', fadeOutHero)
 			.on('scroll', fadeOutText);
 
+		fadeInContent();
 		// Wait until image is loaded
 		function fadeInContent () {
-			console.log('window loaded');
 			$('.c-loading-screen').fadeOut(600, function () {
 				$('.c-hero__inner').fadeIn(600);
 			});
