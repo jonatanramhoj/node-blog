@@ -9,4 +9,4 @@ requirejs.config({
 });
 
 // Require all scripts
-requirejs(['main', 'cookie', 'prism']);
+requirejs(['main', 'prism']);
