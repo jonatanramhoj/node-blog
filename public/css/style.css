@@ -162,6 +162,7 @@ strong {
 	font-size: 64px;
 	line-height: 1.2;
 	font-weight: 600;
+	letter-spacing: 1px;
 	margin-bottom: 30px;
 	transition: all 0.6s ease;
 }
@@ -367,7 +368,7 @@ strong {
 	#FOOTER
 ----------------------------------------------------------*/
 .c-footer {
-	background: #222;
+	/*background: #222;*/
 	margin-top: 160px;
 	padding: 80px 0;
 }
@@ -390,11 +391,10 @@ strong {
 
 .c-footer__heading {
 	display: block;
-	color: #fff;
+	color: #999;
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 1.7;
-	/*text-transform: uppercase;*/
 }
 
 @media(--mobile) {
@@ -414,16 +414,15 @@ strong {
 
 .c-footer__link,
 .c-footer__link:visited {
-	color: #fff;
+	color: #999;
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 1.7;
-	/*text-transform: uppercase;*/
 	transition: color .2s ease-in-out;
 }
 
 .c-footer__link:hover {
-	color: #999;
+	color: #444;
 }
 
 .c-footer__link:hover .c-footer__social-icon {
@@ -644,11 +643,12 @@ strong {
 .c-pagination__link,
 .c-pagination__link:visited {
 	font-size: 16px;
-	color: #444;
+	font-weight: bold;
+	color: #999;
 }
 
-.c-pagination__link--active {
-	border-bottom: 1px solid #444;
+.c-pagination__link.c-pagination__link--active {
+	color: #444;
 }
 
 .c-pagination__icon {
