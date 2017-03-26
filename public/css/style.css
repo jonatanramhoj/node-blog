@@ -576,11 +576,6 @@ strong {
 
 .c-teaser__image {
 	display: block;
-	transition: all .2s ease-in-out;
-}
-
-.c-teaser:hover .c-teaser__image {
-	transform: scale(1.2);
 }
 
 .c-teaser__caption {
