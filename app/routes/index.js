@@ -20,9 +20,9 @@ module.exports = function (passport) {
 	router.get('/', function(req, res, next) {
 		var limit = 6;
 		var page = (req.query.page > 0 ? req.query.page : 1) - 1; // Get current page number
-		var skipNr = page === 0 ? 1 : limit * page; // Omit featured article from list
+		// var skipNr = page === 0 ? 1 : limit * page; // Omit featured article from list
 
-		article.find().limit(limit).skip(skipNr).sort({date: -1}).exec(function (err, articles) {
+		article.find().limit(limit).sort({date: -1}).exec(function (err, articles) {
 			article.findOne().sort({date: -1}).populate('author').exec(function(err, latest) {
 				if (err) {
 					return res.render('500');
