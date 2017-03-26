@@ -132,8 +132,9 @@ define(['jquery', 'cookie'], function ($, Cookies) {
 			tinymce.init({
 				selector: '.c-form__wysiwyg',
 				content_css: '/js/vendor/tinymce/skins/custom/custom-theme.css',
-				plugins: 'codesample, fullscreen, paste, link',
-				toolbar: 'codesample, fullscreen'
+				plugins: 'codesample, fullscreen, paste, link, image',
+				toolbar: 'codesample, fullscreen',
+				image_caption: true
 			});
 		}
 

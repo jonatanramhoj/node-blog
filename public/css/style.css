@@ -940,14 +940,8 @@ strong {
 	margin-bottom: 32px;
 }
 
-.s-text p:last-of-type {
+.s-text p:last-child {
 	margin-bottom: 0;
-}
-
-@media (--mobile) {
-	.s-text p {
-		font-size: 18px;
-	}
 }
 
 .s-text ol,
@@ -1004,6 +998,26 @@ strong {
 .s-text a {
 	color: inherit;
 	border-bottom: 1px solid #444;
+}
+
+.s-text figure {
+	position: relative;
+}
+
+.s-text figcaption {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.s-text img {
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 /*----------------------------------------------------------
