@@ -1004,6 +1004,18 @@ strong {
 	position: relative;
 }
 
+.s-text figure:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(transparent 75%, rgba(0,0,0,0.7));
+}
+
 .s-text figcaption {
 	position: absolute;
 	bottom: 20px;
@@ -1011,7 +1023,8 @@ strong {
 	color: #fff;
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 10px;
+	z-index: 1;
 }
 
 .s-text img {
