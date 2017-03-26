@@ -132,7 +132,7 @@ define(['jquery', 'cookie'], function ($, Cookies) {
 			tinymce.init({
 				selector: '.c-form__wysiwyg',
 				content_css: '/js/vendor/tinymce/skins/custom/custom-theme.css',
-				plugins: 'codesample, fullscreen, paste',
+				plugins: 'codesample, fullscreen, paste, link',
 				toolbar: 'codesample, fullscreen'
 			});
 		}
@@ -146,20 +146,20 @@ define(['jquery', 'cookie'], function ($, Cookies) {
 		});
 
 		// Show infobar if no cookie is set
-		if (!Cookies.get('info')) {
-			$('.c-info-bar').show();
-			$('body').on('click', '.c-info-bar__close', function () {
-				var $nav = $('.c-nav');
-				$(this).closest('.c-info-bar').slideUp(200);
-				if (!$nav.hasClass('c-nav--sticky')) {
-					$nav.addClass('c-nav--sticky');
-				}
-				// Set cookie for 24 hours
-				var date = new Date();
-				date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
-				Cookies.set('info', true, {expires: date});
-			});
-		}
+		// if (!Cookies.get('info')) {
+		// 	$('.c-info-bar').show();
+		// 	$('body').on('click', '.c-info-bar__close', function () {
+		// 		var $nav = $('.c-nav');
+		// 		$(this).closest('.c-info-bar').slideUp(200);
+		// 		if (!$nav.hasClass('c-nav--sticky')) {
+		// 			$nav.addClass('c-nav--sticky');
+		// 		}
+		// 		// Set cookie for 24 hours
+		// 		var date = new Date();
+		// 		date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+		// 		Cookies.set('info', true, {expires: date});
+		// 	});
+		// }
 
 		if ($('.c-info-bar').is(':visible')) {
 			$('.c-nav').removeClass('c-nav--sticky');
